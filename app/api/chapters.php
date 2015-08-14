@@ -1,3 +1,7 @@
+<?php
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+?>
 [ {
 	"date" : "8/20",
 	"reading" : "Chapter 1 (H)",

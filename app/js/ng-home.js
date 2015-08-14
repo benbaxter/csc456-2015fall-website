@@ -53,6 +53,18 @@
 	    	angular.element(document.querySelector("#chapters-tab")).addClass("is-active");
 	    };
 
+	    $scope.goToAdventures = function() {
+	    	angular.element(document.querySelectorAll("a.mdl-layout__tab")).removeClass("is-active");
+	    	angular.element(document.querySelectorAll(".mdl-layout__tab-panel")).removeClass("is-active");
+
+	    	angular.element(document.querySelector("#adventures")).addClass("is-active");
+	    	angular.element(document.querySelector("#adventures-tab")).addClass("is-active");
+	    };
+
+	    $scope.goToAdventure = function(num) {
+	    	window.location.href = "app/views/adventure_" + num + ".html";
+	    }
+
 	    ChapterFactory.getChapters()
 	    	.success(function(chapters) {
 	    		$scope.chapters = chapters;
@@ -64,7 +76,7 @@
     	.factory("ChapterFactory", function($http) {
     		return {
     			getChapters : function() {
-    				return $http.get("http://nku.benjamingbaxter.com/csc456/2015fall/app/api/chapters.json");
+    				return $http.get("http://nku.benjamingbaxter.com/csc456/2015fall/app/api/chapters.php");
     			}
     		};
     	});
