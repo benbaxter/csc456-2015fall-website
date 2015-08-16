@@ -15,8 +15,25 @@
  */
 
 .red-bg {
-  color: #EF3C79;
+  background-color: #EF3C79;
 }
+
+.no-list-style {
+  list-style: none;
+}
+
+.ellipsis {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} 
+
 .demo-container {
   max-width: 1600px;
   width: calc(100% - 16px);
@@ -26,6 +43,31 @@
   border-radius: 2px;
   padding: 80px 56px;
   margin-bottom: 80px;
+}
+
+.demo-card-event.mdl-card {
+  width: 256px;
+  height: 256px;
+  
+}
+.demo-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.demo-card-event > .mdl-card__title {
+  align-items: flex-start;
+}
+.demo-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.demo-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.demo-card-event > .mdl-card__title,
+.demo-card-event > .mdl-card__actions
+/*.demo-card-event > .mdl-card__actions > .mdl-button */{
+  color: #fff;
 }
 
 html, body {
@@ -80,7 +122,7 @@ html, body {
   height: auto;
 }
 .mdl-demo .mdl-card .mdl-card__supporting-text {
-  margin: 40px;
+  margin: 15px;
   flex-grow: 1;
   padding: 0;
   color: inherit;
