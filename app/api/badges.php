@@ -64,7 +64,7 @@ header('Access-Control-Allow-Origin: *');
 	"id" : 10
 }, {
 	"title" : "Super Effective!",
-	"xp" : "100 xp",
+	"xp" : "200 xp",
 	"badge" : "chat",
 	"description" : "Read the book Effective Java by Joshua Bloch and create a small presentation (no more than a 20 minutes) and give it to the class. Please coordinate with me on when you would like to give your presentation so I can adjust the schedule accordingly. This badge will only be awarded to the first person who completes it.",
 	"id" : 11

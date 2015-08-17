@@ -75,7 +75,7 @@
           <a href="#chapters" id="chapters-tab" class="mdl-layout__tab">Chapters</a>
           <a href="#adventures" id="adventures-tab" class="mdl-layout__tab">Adventures</a>
           <a href="#badges" id="badges-tab" class="mdl-layout__tab">Badges</a>
-          <a href="#instructions" id="instructions-tab" class="mdl-layout__tab">Instructions</a>
+          <a href="#instructions" id="instructions-tab" class="mdl-layout__tab">Rule Book</a>
 <!--           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
@@ -166,10 +166,13 @@
             <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
               <div class="mdl-card__supporting-text">
                 <h4>Overview</h4>
-                Coming Soon!
+                <p>
+                  This site will help guide you down a journey of learing web development. Start by looking at the <a href="#" ng-click="goToChapters();">chapters</a> or dive right into the <a href="#" ng-click="goToAdventures();">adventures</a>!
+                </p>
               </div>
               <div class="mdl-card__actions">
                 <button class="mdl-button" ng-click="goToChapters();">View Chapters</button>
+                <button class="mdl-button" ng-click="goToAdventures();">View Adventures</button>
               </div>
             </div>
             <!-- <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
@@ -493,19 +496,6 @@
           </section>  
         </div>
 
-        <div class="mdl-layout__tab-panel" id="instructions">
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-              <i class="material-icons">build</i>
-            </header>
-            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__supporting-text">
-                <h4>Coming Soon!</h4>
-              </div>
-            </div>
-          </section>
-        </div>
-
         <div class="mdl-layout__tab-panel" id="badges">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
@@ -553,6 +543,308 @@
           </section>
         </div>
 
+        <div class="mdl-layout__tab-panel" id="instructions">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">format_list_bulleted</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Rule Book</h4>
+                <p>
+                  Follow these guidelines about the class. You can download a hard copy of the syllabus as well.
+                </p>
+              </div>
+              <div class="mdl-card__actions">
+                <a class="mdl-button" href="CSC_456_Fall_2015_Syllabus.pdf">CSC 456 Syllabus</a>
+                <a class="mdl-button" href="CSC_556_Fall_2015_Syllabus.pdf">CSC 556 Syllabus</a>
+              </div>
+            </div>
+          </section>
+          
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col">Before You Begin</h4>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Prerequisites</h5>
+                  C- or better in CSC 301 and CSC 360.
+                  <br>
+                  Regular admission to MSCS program.
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Instruction Manuals</h5>
+                  Gradle in Action (Manning) (Paperback), (ISBN: 9781617291302) 
+                  <br>
+                  Head First Servlets and JSP: Passing the Sun Certified Web Component Developer Exam (Paperback), 2nd Edition (ISBN: 9780596516680)
+                </div>
+                
+              </div>
+            </div>
+          </section>
+
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col">About the Game</h4>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Course Content</h5>
+                  Advanced technologies for developing web applications for business and industry using J2EE. Focus on the design and development of scalable, robust, and extensible web applications; different frameworks for developing web applications and the software build process. Web component design and programming, data access, product packaging, and application deployment.
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Course Topics</h5>
+                  It will cover the following topics: 
+                    <ul>
+                      <li>Web application architecture</li>
+                      <li>Java development with gradle</li>
+                      <li>MVC</li>
+                      <li>Servlet</li>
+                      <li>JSP</li>
+                      <li>Java Beans</li>
+                      <li>JSTL</li>
+                      <li>Web Services</li>
+                      <li>Web Sockets</li>
+                      <li>Security</li>
+                      <li>Product packaging and deployment</li>
+                    </ul>
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Student Outcomes</h5>
+                  By the end of the course, students will
+                  <ul>
+                    <li>Understand web application development architecture</li>
+                    <li>Be able to use a build scripting tool, such as Gradle, to build and deploy J2EE web applications</li>
+                    <li>Be able to chose the most effective J2EE component for a particular functionality of a web application</li>
+                    <li>Design and implement a project using Servlet, JSP, Java Beans and other J2EE technologies</li>
+                    <li>Be able to implement a web service application</li>
+                    <li>Be familiar with product packaging and application deployment</li>
+                  </ul>
+                </div>
+              
+
+              </div>
+            </div>
+          </section>
+
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col">XP Breakdown</h4>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  
+                  <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6col">
+                      <h5>XP Weights for Undergrads</h5>
+                        Adventures (20%)
+                        <br>
+                        Main Quest (20%)
+                        <br>
+                        Mini Boss 1 (20%)
+                        <br>
+                        Mini Boss 2 (20%)
+                        <br>
+                        Final Boss Fight (20%)
+                    </div>  
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-cell mdl-cell--6col">
+                      <h5>Grading for Undergrads</h5>
+                      Assignments (20%)
+                      <br>
+                      Course Project (20%)
+                      <br>
+                      Midterm 1 (20%)
+                      <br>
+                      Midterm 2 (20%)
+                      <br>
+                      Final Exam (20%)
+                    </div>
+                  </div>
+
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6col">
+                      <h5>XP Weights for Graduates</h5>
+                      Adventures (15%)
+                      <br>
+                      Main Quest (15%)
+                      <br>
+                      Paper (10%)
+                      <br>
+                      Mini Boss 1 (20%)
+                      <br>
+                      Mini Boss 2 (20%)
+                      <br>
+                      Final Boss Fight (20%)
+                    </div>
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-cell mdl-cell--6col">
+                      <h5>Grading for Graduates</h5>
+                      Assignments (15%)
+                      <br>
+                      Course Project (15%)
+                      <br>
+                      Paper (10%)
+                      <br>
+                      Midterm 1 (20%)
+                      <br>
+                      Midterm 2 (20%)
+                      <br>
+                      Final Exam (20%)
+                    </div>
+                  </div>
+                </div>
+            
+              </div>
+            </div>
+          </section>
+
+          <section class="section--footer mdl-color--white mdl-grid">
+            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+              <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+            </div>
+            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+              <h4 class="mdl-cell mdl-cell--12-col">Levels</h4>
+
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    A
+                    <div class="mdl-layout-spacer"></div>
+                    93%-100%
+                    <div class="mdl-layout-spacer"></div>
+                    Web Wizard
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    A-
+                    <div class="mdl-layout-spacer"></div>
+                    90%-92%
+                    <div class="mdl-layout-spacer"></div>
+                    Web Sorcerer
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    B+
+                    <div class="mdl-layout-spacer"></div>
+                    87%-89%
+                    <div class="mdl-layout-spacer"></div>
+                    Web Master
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    B
+                    <div class="mdl-layout-spacer"></div>
+                    83%-86%
+                    <div class="mdl-layout-spacer"></div>
+                    Web Architect
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    B-
+                    <div class="mdl-layout-spacer"></div>
+                    80%-82%
+                    <div class="mdl-layout-spacer"></div>
+                    Web Designer
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    C+
+                    <div class="mdl-layout-spacer"></div>
+                    77%-79%
+                    <div class="mdl-layout-spacer"></div>
+                    Head Developer
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    C
+                    <div class="mdl-layout-spacer"></div>
+                    73%-76%
+                    <div class="mdl-layout-spacer"></div>
+                    App. Apprentice
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    C-
+                    <div class="mdl-layout-spacer"></div>
+                    70%-72%
+                    <div class="mdl-layout-spacer"></div>
+                    DB Apprentice
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    D+
+                    <div class="mdl-layout-spacer"></div>
+                    67%-69%
+                    <div class="mdl-layout-spacer"></div>
+                    SQL Starter
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    D
+                    <div class="mdl-layout-spacer"></div>
+                    60%-66%
+                    <div class="mdl-layout-spacer"></div>
+                    Java Junior 
+                  </div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div class="mdl-grid">
+                    F
+                    <div class="mdl-layout-spacer"></div>
+                    0%-59%
+                    <div class="mdl-layout-spacer"></div>
+                    Web n00b
+                  </div>
+                </div>
+                
+            </div>
+            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+              <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+            </div>
+            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+              <h5>Grading Procedure for Adventures</h5>
+              Students should turn in their assignments via the submission tool before 11:59pm of the due date for each assignment. No late assignments will be accepted after the assignment has been graded. Also, once the solution to an assignment has been discussed in the class or distributed to the class, no late assignment will be accepted.
+              <br><br>
+              <h5>Absentee Policy</h5>
+              Students should make their best efforts to attend each class. If you missed any class, you are responsible for any content covered in that class. 
+              <br><br>
+              <h5>Make-up Test</h5>
+              Only for a reasonable reason a student can be allowed to have a make-up test for one of the missed tests.  The student needs to notify the instructor immediately after the missed test with a verifiable reason. After getting the permission for the make-up test from the instructor by email, the student will be given a make-up test.  A student can only have one make-up test for this class.
+            </div>
+          </section>
+          
+        </div>
+
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <!-- <div class="mdl-mega-footer--drop-down-section">
@@ -596,10 +888,13 @@
             </div> -->
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Contact Me</h1>
+              <h1 class="mdl-mega-footer--heading">Contact</h1>
               <ul class="mdl-mega-footer--link-list">
+                <li>Benjamin Baxter</li>
                 <li><a href="mailto:baxterb2@nku.edu">Email</a></li>
+                <li>Office: GH 460</li>
                 <li>Office Hours by Appointment</li>
+                <li><a href="index.html">Website</a></li>
               </ul>
             </div>
           </div>
