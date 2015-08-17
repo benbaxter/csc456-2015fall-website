@@ -27,41 +27,42 @@ header('Access-Control-Allow-Origin: *');
 	"boss-fight" : true
 }, {
 	"date" : "9/24",
+	"topics" : ["No Class"],
+	"no-class" : true
+}, {
+	"date" : "10/1",
 	"readings" : ["Chapter 5 (H)"],
 	"topics" : ["Being a Web App"],
 	"slides" : ["../slides/Chapter 5 Being a Web App.ppt"]
 }, {
-	"date" : "10/1",
+	"date" : "10/8",
 	"readings" : ["Chapter 7 (H)"],
 	"topics" : ["Java and Databases"],
 	"slides" : ["../slides/JAVA Database Access.ppt"]
 }, {
-	"date" : "10/8",
+	"date" : "10/15",
 	"reading" : ["Chapter 8 (H)"],
 	"topics" : ["Session Management"],
 	"slides" : ["../slides/Chapter 6 Session Management.ppt"]
 }, {
-	"date" : "10/15",
+	"date" : "10/22",
 	"readings" : ["Chapter 11 (H)", "Chapter 3 (G)"],
 	"topics" : ["Deploying Your Web App", "Building a Gradle Project by Example"],
 	"slides" : ["../slides/Chapter 11 Deploying your web app.ppt"]
 }, {
-	"date" : "10/22",
+	"date" : "10/29",
 	"topics" : ["Mini Boss 2"],
 	"boss-fight" : true
 }, {
-	"date" : "10/29",
+	"date" : "11/5",
 	"readings" : ["Chapter 12 (H)"],
 	"topics" : ["Web App Security"],
 	"slides" : ["../slides/Chapter 12 Web app security.ppt"]
 }, {
-	"date" : "11/5",
-	"topics" : ["Web Services"],
+	"date" : "11/12",
+	"topics" : ["Web Topics"],
 	"slides" : ["../slides/Other technologies and products related to J2EE.ppt"]
 }, {
-	"date" : "11/12",
-	"topics" : ["TBD (misc. topics)"]
-}, {	
 	"date" : "11/19",
 	"topics" : ["Project Demo"],
 	"project-demo": true
