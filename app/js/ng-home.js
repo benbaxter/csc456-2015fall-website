@@ -37,13 +37,16 @@
     	angular.element(document.querySelector(tabPanel)).addClass("is-active");
     };
 
+    function convertToDate(d) {
+    	var date = d.split("/");
+		var classMonth = parseInt(date[0]) - 1;
+		var classDay = parseInt(date[1]);
+		return new Date(2015, classMonth, classDay);
+    }
     function getFeatureChapter(chapters) {
     	var featureChapter;
 		var today = new Date();
-		var day = today.getDate();
-		var month = today.getMonth() + 1;
-		var previousClassDay = -1;
-
+		
 		angular.forEach(chapters, function(value, key) {
 			var date = value.date.split("/");
 			var classMonth = parseInt(date[0]) - 1;
@@ -64,8 +67,15 @@
 		return featureChapter;
     }
 
+    function isDateInPast(d) {
+    	var today = new Date();
+		var date = convertToDate(d);
+		
+		return today > date;
+    }
+
 	angular.module( 'csc-456-app' )
-	.controller("HomeController", function($scope, ChapterFactory, BadgeFactory, $sce) {
+	.controller("HomeController", function($scope, ChapterFactory, BadgeFactory, AdventureFactory, $sce) {
 
 		$scope.current =        getCourseProgress();
         $scope.max =            100;
@@ -157,6 +167,22 @@
 	    	
 	    }
 
+	    AdventureFactory.getAdventures()
+	    	.success(function(adventures) {
+	    		$scope.adventures = adventures;
+	    		angular.forEach($scope.adventures, function(value, key){
+	    			value.overview = $sce.trustAsHtml(value.overview); 
+	    		});
+	    	});
+
+	    $scope.getClassForAdventure = function(adventure) {
+	    	if( isDateInPast(adventure.date) ) {
+	    		return "mdl-color--accent";
+	    	}
+	    	
+	    	return "mdl-color--primary";
+	    }
+
 	    $scope.getListStyleForList = function(list) {
 	    	if( list && list.length == 1 ) {
 	    		return "no-list-style";
@@ -193,6 +219,13 @@
     		return {
     			getBadges : function() {
     				return $http.get("http://nku.benjamingbaxter.com/csc456/2015fall/app/api/badges.php");
+    			}
+    		};
+    	})
+    	.factory("AdventureFactory", function($http) {
+    		return {
+    			getAdventures : function() {
+    				return $http.get("http://nku.benjamingbaxter.com/csc456/2015fall/app/api/adventures.php");
     			}
     		};
     	});

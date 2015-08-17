@@ -28,6 +28,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "~0.10.0"
+    "angular-material": "~0.10.0",
+    "highlightjs" : "8.7.0"
   }
 }

@@ -63,9 +63,15 @@ header('Access-Control-Allow-Origin: *');
 	"description" : "Build an android client for any assignment or for this website. If you do it for this website. feel free to ask me for help on the API services.",
 	"id" : 10
 }, {
+	"title" : "Docker",
+	"xp" : "50 xp",
+	"badge" : "present_to_all",
+	"description" : "Reseach what Docker is and build an image of your tomcat server with an app installed in tomcat. Document how someone else would be able to use your docker image and have your tomcat server and app up and running.",
+	"id" : 11
+}, {
 	"title" : "Super Effective!",
 	"xp" : "200 xp",
 	"badge" : "chat",
 	"description" : "Read the book Effective Java by Joshua Bloch and create a small presentation (no more than a 20 minutes) and give it to the class. Please coordinate with me on when you would like to give your presentation so I can adjust the schedule accordingly. This badge will only be awarded to the first person who completes it.",
-	"id" : 11
+	"id" : 12
 }]
