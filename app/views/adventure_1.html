@@ -82,14 +82,46 @@
             </div>
 
             <h3>Character Setup</h3>
-              Create a folder called "adventure1" for all your work for this adventure. This folder will be checked into your repository on github.
+              This adventure will consists of 4 parts
+              <ol>
+                <li>Setup</li>
+                <li>Git</li>
+                <li>Tomcat</li>
+                <li>Guessing Game</li>
+              </ol>
+
+              <h4>Setup</h4>
+              Create a folder called "adventure1" for all your work for this adventure. This folder will be checked into your repository on github. On github, you will have one repository as part of an organization. This is where you will upload all of your adventures to be graded. Create a directory/folder on your computer that will contain all of your adventures for this course. For example:
+              <pre>
+                /csc456_adventures/
+              </pre>
+              This will become your git repository. Over time this will grow with more adventures. For example, once you complete this first adventure, your folder should contain the following folders and files.
+              <pre>
+                /csc456_adventures/
+                /csc456_adventures/adventure1
+                /csc456_adventures/adventure1/my-first-project
+                /csc456_adventures/adventure1/guessing-game
+                /csc456_adventures/adventure1/git-training-screen-shot.jpg
+              </pre>
+              You might want stay organized and put each adventure into its own folder, for example:
+              <pre>
+                /csc456_adventures/
+                /csc456_adventures/adventure1/
+                /csc456_adventures/adventure1/my-first-project
+                /csc456_adventures/adventure1/guessing-game
+                /csc456_adventures/adventure1/git-training-screen-shot.jpg
+                /csc456_adventures/adventure2/
+                /csc456_adventures/adventure2/new-project
+                /csc456_adventures/adventure3/
+                /csc456_adventures/adventure2/another-project
+              </pre>
               <h4>Git</h4>
               <p>
-                Setup an account on github and download gitfor your source code management tool. <a href="mailto:baxterb2@nku.edu">Email me</a> your github username so I may put you in the organization. 
+                Setup an account on github (if you do not already have one) and download git as your source code management tool. <a href="mailto:baxterb2@nku.edu">Email me</a> your github username so I may put you in the course organization. 
                 <br><br>
                 If you are using a mac, sourcetree is one of the best tools available. The egit plugin that comes built into eclipse is very nice. The problem is that egit is built using jgit where as other git clients use msys-git and they are not compatible. For what we are doing, it will not matter but if you are to work with a team, make sure everyone using the same implemenation and flavor of git. 'Github for windows' is a terrible tool, you are better off using the command line. I do not care which one you download if you do download one, but this is just my 2 cents on which tools work well for a git client and which ones do not.
                 <br><br>
-                Go to <a href="https://try.github.com">try.github.com</a> and complete the 25 challenges. Take a screen shot of the congratulations page. Create a folder in your repository on githib to add this screen shot too. Push this screen shot to your repository.
+                Go to <a href="https://try.github.com">try.github.com</a> and complete the 25 challenges. Take a screen shot of the congratulations page. Create a folder in your repository on githib to add this screen shot. Do NOT put the screen shot in a word document, just use the jpg/png or whatever your screen shot picture is saved as. Push this screen shot to your repository.
               </p>
               <h4>Tomcat</h4>
               <p>
@@ -99,14 +131,14 @@
                 <br>
                 <ol>
                   <li>
-                    Build this directory tree (the directory project1 can be under somewhere other than the directory where you install tomcat)
+                    Build this directory tree (the directory my-first-project can be under somewhere other than the directory where you install tomcat)
                     <pre>
-                      /project1/
-                      /project1/src/
-                      /project1/src/Ch1Servlet.java
-                      /project1/classes/
-                      /project1/etc/
-                      /project1/etc/web.xml
+                      /my-first-project/
+                      /my-first-project/src/
+                      /my-first-project/src/Ch1Servlet.java
+                      /my-first-project/classes/
+                      /my-first-project/etc/
+                      /my-first-project/etc/web.xml
                     </pre>
                     <span class="mdl-button mdl-js-button">Files</span>
                     <a href="adventure1/Ch1Servlet.java" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Ch1Servlet</a> 
@@ -122,21 +154,21 @@
                     </pre>
                   </li>
                   <li>
-                    From the command line, go into the project1 directory and compile the   servlet.
+                    From the command line, go into the <strong><em>my-first-project</em></strong> directory and compile the   servlet.
                     <pre><code>javac -classpath \path_to_tomcat\lib\servlet-api.jar -d classes src\Ch1Servlet.java
                     </code></pre>
 
-                      Please be noted that in the book, it uses a different version of tomcat, thus it uses a different classpath as in the following command: 
+                      Note that in the book, it uses a different version of tomcat, thus it uses a different classpath as in the following command: 
                       <pre>
                         javac -classpath /path_to_tomcat/<strong><em>common</em></strong>/lib/servlet-api.jar -d classes src/Ch1Servlet.java
                       </pre>
                       In our installation of Tomcat, there is no sub-dir <strong>common</strong> under tomcat dir. Thus, if you use the command in the book as it, it will prompt a compilation error.
                   </li>
                   <li>
-                    Copy the Ch1Servlet.class file from the subdirectory called classes under the project1 directory to the directory WEB-INF/classes, and copy the web.xml from the directory called etc under the project1 directory to WEB-INF as illustrated. 
+                    Copy the Ch1Servlet.class file from the subdirectory called <strong><em>classes</em></strong> under the <strong><em>my-first-project</em></strong> directory to the directory <strong><em>WEB-INF/classes</em></strong>, and copy the web.xml from the directory called <strong><em>etc</em></strong> under the <strong><em>my-first-project</em></strong> directory to <strong><em>WEB-INF</em></strong> as illustrated. 
                     <pre>
-                      /project1/etc/web.xml &rarr; /tomcat/webapps/ch1/WEB-INF/web.xml
-                      /project1/classes/Ch1Servlet.class &rarr; /tomcat/webapps/ch1/WEB-INF/classes/Ch1Servlet.class
+                      /my-first-project/etc/web.xml &rarr; /tomcat/webapps/ch1/WEB-INF/web.xml
+                      /my-first-project/classes/Ch1Servlet.class &rarr; /tomcat/webapps/ch1/WEB-INF/classes/Ch1Servlet.class
                     </pre>
                   </li>
                   <li>
@@ -160,20 +192,65 @@
                 Take a screen shot of your browser with the servelt loaded. Save the screen shot in your adventure1 directory and upload the project to your repo.
               </p>
 
-              <h4>Guessing Number Game</h4>
-              <p>
+              <h4>Guessing Game</h4>
+              <section>
+                <h6>Rules</h6>
                 Build an application that plays a game with the user. The requirements are as follows:
                 <ol>
                   <li>Have the app generate a number between 1 and 10.</li>
                   <li>Store this random number in a hidden input field.</li>
-                  <li>Have an form for the user to guess the random number.</li> 
+                  <li>Have a form for the user to guess the random number.</li> 
                   <li>The form will submit to the same jsp file.</li> 
                   <li>Once the user submits their guess, tell the user if their guess was too high, too low, or correct.</li>
                   <li>If the user guessed correctly, show the random number then reset the random number so that the user can immediately start playing again.</li>
                   <li>Lastly, have the ability for the user to ask for a hint which tells the user what the random number is.</li>
                 </ol>
                 Take a screen shot of each scenario of the game and store them in your project's directory. Push your screen shots and the project to your github repository.
-              </p>
+
+                <br><br>
+                This sounds pretty simple with the biggest problem is how to get started. If this was a simple java program using the console for input, there would be no issues completing this. However, we want any one from anywhere in the world to be able play our game. So how do we start this web application?
+
+                <h6>Getting Started and Hints</h6>
+                Build this directory tree (the directory guessing-game can be under somewhere other than the directory where you install tomcat)
+                <pre>
+                  /guessing-game/
+                  /guessing-game/guess.jsp
+                </pre>
+                The jsp will start like any normal html page.
+                <pre><code class="html">&lt;!doctype html&gt;
+                  &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                      &lt;title&gt;Guessing Game&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                      Hello World!
+                    &lt;/body&gt;
+                  &lt;/html&gt;</code></pre>
+                  Now that we have a small html page put together, let's start to build out the game. The requirement was to generate a random number between 1 and 10. We are smart java developers, generating a random number is simple!
+                  <pre><code class="java">(int) (Math.random() * 10) + 1</code></pre>
+                  We add one to the number because Math.random() returns a number between 0 and 1, so to account for being zero based, we need to add a 1. Next we need to store the number in a hidden field. For those who are rusty on html, just set the type of an input field to hidden and the user will not be able to see it. 
+                  <pre><code>&lt;input type="hidden" value="&lt;%= randomNumber %&gt;" name="number" /&gt;</code></pre>
+                  We will need to create a form with the hidden field and a regular input field for the user to enter their guess. The form will submit to itself so we need to set the action of the form to our jsp. 
+                  <pre><code>&lt;form method="post" action="guess.jsp"&gt;</code></pre>
+                  We are going to use post so that we do not accidently show the user the random number in the url in the address bar. Since we are submitting the form to itself, this means that the jsp needs to keep track of state. We do not want to create a new random number each time we come to the page. So, we need to check to see if we have a random number from a previous form submission. If we have a number, great! Otherwise, we need to generate one. 
+                  <pre><code>&lt;% 
+                    int number = (int) (Math.random() * 10) + 1;
+                    String n = request.getParameter("number");
+                    if( n == null || n.isEmpty() ) {
+                      number = Integer.parseInt(n);
+                    }
+                    %&gt;</code></pre>
+                    To know if the user's guess was too high or too low, you will need to grab the user's guess from the request and compare it to the number. If they guessed correctly, show the number then reset it to another random number so that the user may play again. Lastly, we need to give the user the ability to ask for a hint. If you want to use javascript for this part, that would be okay. If you want more practice with jsps and form submissions, you will need to set the name attribute on a button or be clever with an anchor tag. There are many ways to approach showing the hint.
+
+                    <br><br>
+                    If you get stuck while developing the game, remember that you can always print out your java variables to see their values.
+                    <pre><code>&lt;%= variable %&gt;</code></pre>
+                    Here is a screen shot of my solution to help you out. The more creative and attractive your solution, the better.
+                    <img src="../images/guessing_game.png" alt="Guessing Game Screen Shot" />
+                    <br>
+                    Take a screen shot of each scenario of the game and store them in your project's directory. Push your screen shots and the project to your github repository.
+
+              </section>
               
           </div>
         </div>
