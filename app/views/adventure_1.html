@@ -83,14 +83,15 @@
 
             <h3>Character Setup</h3>
               This adventure will consists of 4 parts
-              <ol>
-                <li>Setup</li>
-                <li>Git</li>
-                <li>Tomcat</li>
-                <li>Guessing Game</li>
-              </ol>
 
-              <h4>Setup</h4>
+              <ul class="toc">
+                <a href="#setup">Setup</a>
+                <a href="#git">Git</a>
+                <a href="#tomcat">Tomcat</a>
+                <a href="#game">Guessing Game</a>
+              </ul>
+
+              <h4 id="setup">Setup</h4>
               Create a folder called "adventure1" for all your work for this adventure. This folder will be checked into your repository on github. On github, you will have one repository as part of an organization. This is where you will upload all of your adventures to be graded. Create a directory/folder on your computer that will contain all of your adventures for this course. For example:
               <pre>
                 /csc456_adventures/
@@ -115,7 +116,8 @@
                 /csc456_adventures/adventure3/
                 /csc456_adventures/adventure2/another-project
               </pre>
-              <h4>Git</h4>
+              <strong><em>Note: If you check in your tomcat server into your git repository, you will lose half of the XP.</em></strong>
+              <h4 id="git">Git</h4>
               <p>
                 Setup an account on github (if you do not already have one) and download git as your source code management tool. <a href="mailto:baxterb2@nku.edu">Email me</a> your github username so I may put you in the course organization. 
                 <br><br>
@@ -123,7 +125,7 @@
                 <br><br>
                 Go to <a href="https://try.github.com">try.github.com</a> and complete the 25 challenges. Take a screen shot of the congratulations page. Create a folder in your repository on githib to add this screen shot. Do NOT put the screen shot in a word document, just use the jpg/png or whatever your screen shot picture is saved as. Push this screen shot to your repository.
               </p>
-              <h4>Tomcat</h4>
+              <h4 id="tomcat">Tomcat</h4>
               <p>
                 Next, we will practice writing a simple servlet displaying the current date on the screen. The purpose of this lab is to give you a concrete example of servlet programming and deployment process. Students do not have to understand how the program works, this just serve as a demonstration for servlet for those who cannot wait. We will discuss the detail of servlet and JSP programming in future chapters.
                 <br><br>
@@ -155,12 +157,12 @@
                   </li>
                   <li>
                     From the command line, go into the <strong><em>my-first-project</em></strong> directory and compile the   servlet.
-                    <pre><code>javac -classpath \path_to_tomcat\lib\servlet-api.jar -d classes src\Ch1Servlet.java
+                    <pre><code>javac -classpath relative_path_to_tomcat\lib\servlet-api.jar -d classes src\Ch1Servlet.java
                     </code></pre>
 
                       Note that in the book, it uses a different version of tomcat, thus it uses a different classpath as in the following command: 
                       <pre>
-                        javac -classpath /path_to_tomcat/<strong><em>common</em></strong>/lib/servlet-api.jar -d classes src/Ch1Servlet.java
+                        javac -classpath relative_path_to_tomcat/<strong><em>common</em></strong>/lib/servlet-api.jar -d classes src/Ch1Servlet.java
                       </pre>
                       In our installation of Tomcat, there is no sub-dir <strong>common</strong> under tomcat dir. Thus, if you use the command in the book as it, it will prompt a compilation error.
                   </li>
@@ -192,7 +194,7 @@
                 Take a screen shot of your browser with the servelt loaded. Save the screen shot in your adventure1 directory and upload the project to your repo.
               </p>
 
-              <h4>Guessing Game</h4>
+              <h4 id="game">Guessing Game</h4>
               <section>
                 <h6>Rules</h6>
                 Build an application that plays a game with the user. The requirements are as follows:
