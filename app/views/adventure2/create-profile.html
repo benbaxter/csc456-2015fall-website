@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A simple guessing game">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile Page</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="CSC 456/556 Fall 2015">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">
+	<link rel="stylesheet" href="http://www.getmdl.io/templates/article/styles.css">
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+	
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" ng-app="csc-456-app">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="HomeController">
+      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Profile Page</span>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+      <div class="demo-ribbon"></div>
+	  <main class="demo-main mdl-layout__content">
+		<div class="demo-container mdl-grid">
+			<div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+				<div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+					<h3>Welcome!</h3>
+					<section>
+					<h4>Complete the form to create your profile.</h4>
+					<form method="post" action="create-profile">
+						<p></p>
+						<div class="mdl-textfield mdl-js-textfield textfield-demo">
+							<input class="mdl-textfield__input" type="text" name="first_name" size="20" />
+							<label class="mdl-textfield__label" for="first_name">First Name</label>
+						  </div>
+						<div class="mdl-textfield mdl-js-textfield textfield-demo">
+							<input class="mdl-textfield__input" type="text" name="last_name" size="20" />
+							<label class="mdl-textfield__label" for="last_name">Last Name</label>
+						  </div>
+						  <div class="mdl-textfield mdl-js-textfield textfield-demo">
+							<input class="mdl-textfield__input" type="text" name="email" size="20" pattern=".+@.+\..+" />
+							<label class="mdl-textfield__label" for="email">Email</label>
+							<span class="mdl-textfield__error">Input is not a valid email!</span>
+						  </div>
+
+						<div>Select your favorite color 
+							<select size="1" name="color">
+								<option>red</option>
+								<option>blue</option>
+								<option>yellow</option>
+								<option>black</option>
+								<option>pink</option>
+								<option>green</option>
+								<option>brown</option>
+								<option>Other</option>
+							</select>
+						</div>
+						<br>
+						<p>Select the food your like</p>
+						<p><input type="checkbox" name="food" value="American">American<br>
+						<input type="checkbox" name="food" value="Italian">Italian<br>
+						<input type="checkbox" name="food" value="Chinese">Chinese<br>
+						<input type="checkbox" name="food" value="Mexican">Mexican<br>
+						<input type="checkbox" name="food" value="Japanese">Japanese<br>
+						<input type="checkbox" name="food" value="French">French<br>
+						<input type="checkbox" name="food" value="Indian">Indian</p>
+						<p>Select the number of courses you registered this semester</p>
+						<p><input type="radio" name="course" value="1" checked>1<br>
+						<input type="radio" name="course" value="2">2<br>
+						<input type="radio" name="course" value="3">3<br>
+						<input type="radio" name="course" value="4">4<br>
+						<input type="radio" name="course" value="5">More than 4</p>
+						<p>Select the weather you like</p>
+						<p><input type="radio" name="weather" value="sunny">sunny<br>
+						<input type="radio" name="weather" value="cloudy">cloudy</p>
+						<p></p>
+						<br>
+						<button name="B1" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Submit</button>
+					</form>
+					<br>
+					</section>
+				</div>
+			</div>
+		</div>
+	  </main>
+	</div>
+  </body>
+</html>
