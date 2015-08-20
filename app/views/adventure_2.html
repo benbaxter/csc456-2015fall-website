@@ -95,23 +95,126 @@
               
               <h4 id="expressions">Rewrite with <small>${expressions}</small></h4>
               <section>
-                Adventure coming soon!
+                The guessing game was a really simple program but using scriptlet tags can be pretty nasty. Let's rewrite the game but use expressions instead to help clean up our code. 
+                <br><br>
+                Create a directory called <em>guessing-expressions</em> in the <em>adventure2</em> directory. 
+                <pre>/adventure2/guessing-expressions/</pre>
+                Copy the jsp and folder structure from the previous adventure into this folder. If you run this new app in tomcat, it should work just like the game from the last adventure. Go ahead and run this in tomcat to make sure the project structure is correct and the app is working. 
+                <br><br>
+                Go through the app and replace all scriptlet tags that output in the html to expressions. Basically, convert:
+                <pre><code class="java">&lt;%= ... %&gt;</code></pre>
+                into:
+                <pre><code class="java">${ ... }</code></pre>
+                This is supposed to be a really small and easy adventure. There should be a minimum of 3 replacements. Take a screen shot of the app still working after the changes. Save the screen shots in the <em>adventure2</em> directory and push to your repository on Github.
               </section>
 
               <h4 id="jstl">Rewrite with jstl</h4>
               <section>
-                Adventure coming soon!
+                Expressions are nice and all but they are pretty limited with functionality. Let's rewrite the game one more time without using any scriptlet tags. 
+                <br><br>
+                Create a directory called <em>guessing-jstl</em> in the <em>adventure2</em> directory. 
+                <pre>/adventure2/guessing-jstl/</pre>
+                Copy the guessing game code and folders from the guessing-expressions app. Run this new app in tomcat to make sure everything still runs correctly. 
+                <br><br>
+                Go through the app and replace all scriptlet tags with the correct core jstl tags. For example the if statement in the scriptlet tag will become an &lt;c:if /&gt; tag and the if-else statement will become a &lt;c:choose /&gt; tag. There should be a minimum of 2 replacements. In addition change at least one of the expressions (${...}) to use a core jstl tag. 
+                <br><br>
+                When you are done, there should be <strong>no</strong> scriptlet tags in used in the jsp. Make sure the game still works correctly and take a screen shot of the app. Saved the screen shot in the <em>adventure2</em> directory as well. 
               </section>
               
               <h4 id="gradle">Gradle, Gradle, Gradle</h4>
               <section>
-                Adventure coming soon!
+                <h4>Gradle</h4>
+                <p>
+                  Download Gradle from Gradleware's website and read about how to install it. <a href="http://www.gradle.org/">Gradle</a>
+                  <br>
+                  Follow the installation instructions <a href="http://www.gradle.org/docs/current/userguide/userguide_single.html#N100CE">here</a>
+                  <br>
+                  To get started, here is the <a href="http://www.gradle.org/docs/current/userguide/userguide_single.html#installation">first step</a>
 
+                  <br><br>
+
+                  Once gradle is installed and setup, create the following directory structure under <em>adventure2</em>.
+
+                  <pre>
+/adventure2/gradle-intro/
+/adventure2/gradle-intro/src/
+/adventure2/gradle-intro/src/main/
+/adventure2/gradle-intro/src/main/java/
+/adventure2/gradle-intro/src/main/java/edu/
+/adventure2/gradle-intro/src/main/java/edu/nku/
+/adventure2/gradle-intro/src/main/java/edu/nku/csc456/
+/adventure2/gradle-intro/src/main/java/edu/nku/csc456/profile/
+/adventure2/gradle-intro/src/main/webapp/
+/adventure2/gradle-intro/src/main/webapp/WEB-INF/</pre>
+                  
+                  The <em>/edu/nku/csc456/profile/</em> corresponds to what is called a package in java. The first line in the java file defines the package so that the jvm can index the class file in teh folder structure. In the <em>profile</em> directory, create a file named <em>MD5Util.java</em>. Copy the folling code into the file.
+                  <pre><code class="java">package edu.nku.csc456.profile;
+
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+public class MD5Util {
+
+  public static String hex(byte[] array) {
+    StringBuffer sb = new StringBuffer();
+    for (int i = 0; i < array.length; ++i) {
+      sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(
+          1, 3));
+    }
+    return sb.toString();
+  }
+
+  public static String md5Hex(String message) {
+    try {
+      MessageDigest md = MessageDigest.getInstance("MD5");
+      return hex(md.digest(message.getBytes("CP1252")));
+    } catch (NoSuchAlgorithmException e) {
+    } catch (UnsupportedEncodingException e) {
+    }
+    return null;
+  }
+}</code></pre>
+                Assuming your folder structure is correct, everything should compile when we go to use gradle. 
+                <br><br>
+                Let's add one more file so that we can test this gradle app. Download and copy the <a href="adventure2/profile.jsp">profile.jsp</a> file into the <em>/webapp/</em> directory. 
+                <br><br>
+                Next, in the <em>/gradle-intro/</em> folder, create a file called <em>build.gradle</em>. Copy the follow code into the file
+                <pre><code class="groovy">apply plugin: 'war'
+
+war {
+    baseName = 'gradle-intro'
+}</code></pre>
+                From the command line, change directory to <em>/gradle-intro/</em> and run the following command.
+                <pre><code>$&gt; gradle build</code></pre>
+                This should generate a new directory called <em>/build/</em>. Inside build should be another folder called <em>libs</em> with a <em>war</em> file inside that. You should see something like this:
+                <pre>
+                  /adventure2/gradle-intro/build/
+                  /adventure2/gradle-intro/build/libs/
+                  /adventure2/gradle-intro/build/libs/gradle-intro.war
+                </pre>
+                  Copy the <em>gradle-intro.war</em> to the webapps directory in your topcat server. Wait a few seconds for tomcat to figure out a new war file has been dropped into its webapp's directory. Tomcat will automatically start deploying the new app. If you do to <a href="http://localhost:8080/gradle-intro/profile.jsp">http://localhost:8080/gradle-intro/profile.jsp</a>, you should see a page that says hello and has a default gravitar image. We will talk more about gravitar images in the next section. It should look very similar to this image:
+                  <br>
+                  <img alt="gradle profile screen shot" src="../images/gradle_intro_profile.png" />
+                  <br>
+                  Play around with the email address used in the jsp. If you havea gravitar, then go ahead and use your email address.
+                  <br><br>
+                  Take a screen shot of the app running and the console output from running the 'gradle build' command. Save these screen shots in the <em>adventure2</em> directory so that they get pushed to your repository when you complete your adventure. 
+
+                  <h6>Congrats!</h6>
+                  If you made it this far, then that means you have created your first webapp using gradle! It was a lot of setup and hard work but it will pay off the rest of the semester. In the real world, once you setup gradle (or other build tool) on your machine, you never need to touch it again and can focus on the real coding and not the tooling needed to support the coding. However, you still need to setup your machine first. 
+
+                  <br><br>
+                  Let's do one more exercise with gradle, then you never have to worry about gradle again (at least until we go over gradle in more detail later in our adventures)
+                  <br><br>
+                  Read about how to <a href="http://www.gradle.org/docs/current/userguide/tutorial_using_tasks.html">create tasks</a> with gradle and create a hello world task. Modify your task to print the current time. Take a screen shot of your console after running your hello world task and save it in the <em>adventure2</em> directory.
               </section>
 
               <h4 id="profile">User Profile Page</h4>
               <section>
                 Adventure coming soon!
+
+                
 
               </section>
               
