@@ -1,0 +1,172 @@
+
+
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white">
+    <!-- <i class="material-icons">play_circle_filled</i> -->
+    <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+      <div class="progress-wrapper">
+        <div class="progress" ng-style="getStyle()"><h1>{{ current }}%</h1></div>
+        <div
+            round-progress
+            max="max"
+            current="current"
+            color="{{ currentColor }}"
+            bgcolor="{{ bgColor }}"
+            radius="{{ radius }}"
+            semi="isSemi"
+            rounded="rounded"
+            stroke="{{ stroke }}"
+            clockwise="clockwise"
+            responsive="responsive"
+            iterations="{{ iterations }}"
+            animation="{{ currentAnimation }}">
+
+            <svg>
+                <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="5%"  stop-color="green"/>
+                    <stop offset="95%" stop-color="gold"/>
+                </linearGradient>
+            </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-card__supporting-text">
+      <h4>Overview</h4>
+      <p>
+        This site will help guide you down a journey of learing web development. Start by looking at the <a href="#" ng-click="goToChapters();">chapters</a> or dive right into the <a href="#" ng-click="goToAdventures();">adventures</a>!
+      </p>
+    </div>
+    <div class="mdl-card__actions">
+      <button class="mdl-button" ng-click="goToChapters();">View Chapters</button>
+      <button class="mdl-button" ng-click="goToAdventures();">View Adventures</button>
+    </div>
+  </div>
+  
+</section>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+      <h4 class="mdl-cell mdl-cell--12-col">Getting Started</h4>
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--primary"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Living Website</h5>
+        The chapters and adventures will be uploaded as we move through the course.
+      </div>
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--primary"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Java 8</h5>
+        The course will be in Java 8 so please make sure you have java 8 downloaded. Please <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">download</a> java 8 if you have not already.
+      </div>
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--primary"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Java 8 Submissions</h5>
+        There are many new cool features in Java 8. To help you learn these features, any submission that does not use Java 8 features (when applicable) will not earn full credit. More details will be provided during the adventures.
+
+      </div>
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--primary"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>DO NOT USE NOTEPAD</h5>
+        If you use notepad or notepad++ you will struggle through this course. Folder structure and complex file systems are part of java web development and a notepad too will not help you like a real Integrated Development Environment (IDE) will.
+      </div>
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--primary"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Java Code Editor</h5>
+        You will also need an 'advanced' editor. jCreator will not suffice. You can use eclipse, intellij, or netbeans. The choice is up to you. If you choose to use eclipse, make sure you download eclipse ee edition. I will be using eclipse ee as we go through this course so if you use eclipse and are having issues, I can try to help you out. If you use netbeans or intellij, I will not be able to help you out as easily if you are having a problem with those tools.
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+      <h4 class="mdl-cell mdl-cell--12-col">How To Complete An Adventure</h4>
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--primary"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Not Using Blackboard</h5>
+        This course is about web development. Web development requires more skills than just being able to code. For example, how to manage code. 
+        <br><br>
+        Blackboard is nice but... How about we try something different...
+        <br><br>
+        If we use source code management tools for adventure submissions in this course., it will require a level of academic honesty...
+      </div>
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--primary"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Github</h5>
+        We will use Github to submit solutions. There is an organization setup on github for this course. I will download your repo which will contain all of your submissions.
+        <br><br>
+        If you need a refresher on how to use git, complete this <a href="https://try.github.io/levels/1/challenges/1" target="_blank">training</a>.
+      </div>
+    </div>
+    <div class="mdl-card__actions">
+      <a href="http://github.com/" class="mdl-button">github</a>
+      <a href="https://github.com/orgs/csc456fall2015" class="mdl-button">Class Organization</a>
+    </div>
+  </div>
+  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
+    <i class="material-icons">more_vert</i>
+  </button>
+  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
+    <li class="mdl-menu__item"><a href="http://github.com/">github</a></li>
+    <li class="mdl-menu__item"><a href="https://github.com/orgs/csc456fall2015">Class Organization</a></li>
+    <li class="mdl-menu__item" ng-click="goToAdventures();">Adventures</li>
+  </ul>
+</section>
+<!-- <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text">
+      <h4>Technology</h4>
+      Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
+    </div>
+    <div class="mdl-card__actions">
+      <a href="#" class="mdl-button">Read our features</a>
+    </div>
+  </div>
+  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+    <i class="material-icons">more_vert</i>
+  </button>
+  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+    <li class="mdl-menu__item">Lorem</li>
+    <li class="mdl-menu__item" disabled>Ipsum</li>
+    <li class="mdl-menu__item">Dolor</li>
+  </ul>
+</section> -->
+<section class="section--footer mdl-color--white mdl-grid">
+  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+    <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+  </div>
+  <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+    <h5>Miscellaneous</h5>
+    I will use blackboard an a way to email the class
+    <br>
+    I would like to use this site as a hub for this class.
+    <br>
+    If a link on the site is broken, let me know and I will fix it as soon as I can.
+    <br>
+    Feel free to <a href="mailto:baxterb2@nku.edu">email</a> me at any time.
+  </div>
+  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+    <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+  </div>
+  <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+    <h5>Gamification</h5>
+    As an effort to make the course more interesting, I have tried to gamify the course. The gamification aspect should not be a distract but rather tool to make this difficult topic more engaging. 
+    <br>
+    What does this mean? You will start out with 0 experience points, just like in a game. As you complete assignments (adventures), you will earn experience points. You will be able to earn badges for extra credit. There will be no tests, just mini boss fights and a final boss fight at the end of the semester. 
+  </div>
+</section>

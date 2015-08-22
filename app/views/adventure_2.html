@@ -1,141 +1,67 @@
-<!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
+<div class="demo-ribbon"></div>
+<main class="demo-main mdl-layout__content">
+  <div class="demo-container mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+      <div class="demo-crumbs mdl-color-text--grey-500">
+        Adventure &gt; 2 &gt; Guessing Game Revamped
+      </div>
 
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
+      <h3>Revamp the Guessing Game</h3>
+        This adventure will consists of 4 parts
+        <ul class="toc">
+          <a href="#expressions">Rewrite with expressions</a>
+          <a href="#jstl">Rewrite with jstl</a>
+          <a href="#gradle">Gradle, Gradle, Gradle</a>
+          <a href="#profile">User Profile Page</a>
+        </ul>
 
-      https://www.apache.org/licenses/LICENSE-2.0
+        <h4>Setup</h4>
+        Create a folder called "adventure2" for all your work for this adventure. This folder will be checked into your repository on github. 
+        
+        <h4 id="expressions">Rewrite with <small>${expressions}</small></h4>
+        <section>
+          The guessing game was a really simple program but using scriptlet tags can be pretty nasty. Let's rewrite the game but use expressions instead to help clean up our code. 
+          <br><br>
+          Create a directory called <em>guessing-expressions</em> in the <em>adventure2</em> directory. 
+          <pre>/adventure2/guessing-expressions/</pre>
+          Copy the jsp and folder structure from the previous adventure into this folder. If you run this new app in tomcat, it should work just like the game from the last adventure. Go ahead and run this in tomcat to make sure the project structure is correct and the app is working. 
+          <br><br>
+          Go through the app and replace all scriptlet tags that output in the html to expressions. Basically, convert:
+          <pre><code class="java">&lt;%= ... %&gt;</code></pre>
+          into:
+          <pre><code class="java">${ ... }</code></pre>
+          This is supposed to be a really small and easy adventure. There should be a minimum of 3 replacements. Take a screen shot of the app still working after the changes. Save the screen shots in the <em>adventure2</em> directory and push to your repository on Github.
+        </section>
 
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A course outline for CSC 456/556 Advanced Web Development">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSC 456/556 | Fall 2015</title>
+        <h4 id="jstl">Rewrite with jstl</h4>
+        <section>
+          Expressions are nice and all but they are pretty limited with functionality. Let's rewrite the game one more time without using any scriptlet tags. 
+          <br><br>
+          Create a directory called <em>guessing-jstl</em> in the <em>adventure2</em> directory. 
+          <pre>/adventure2/guessing-jstl/</pre>
+          Copy the guessing game code and folders from the guessing-expressions app. Run this new app in tomcat to make sure everything still runs correctly. 
+          <br><br>
+          Go through the app and replace all scriptlet tags with the correct core jstl tags. For example the if statement in the scriptlet tag will become an &lt;c:if /&gt; tag and the if-else statement will become a &lt;c:choose /&gt; tag. There should be a minimum of 2 replacements. In addition change at least one of the expressions (${...}) to use a core jstl tag. 
+          <br><br>
+          When you are done, there should be <strong>no</strong> scriptlet tags in used in the jsp. Make sure the game still works correctly and take a screen shot of the app. Saved the screen shot in the <em>adventure2</em> directory as well. 
+        </section>
+        
+        <h4 id="gradle">Gradle, Gradle, Gradle</h4>
+        <section>
+          <h4>Gradle</h4>
+          <p>
+            Download Gradle from Gradleware's website and read about how to install it. <a href="http://www.gradle.org/">Gradle</a>
+            <br>
+            Follow the installation instructions <a href="http://www.gradle.org/docs/current/userguide/userguide_single.html#N100CE">here</a>
+            <br>
+            To get started, here is the <a href="http://www.gradle.org/docs/current/userguide/userguide_single.html#installation">first step</a>
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png"> -->
+            <br><br>
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="CSC 456/556 Fall 2015">
-    <!-- <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png"> -->
+            Once gradle is installed and setup, create the following directory structure under <em>adventure2</em>.
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <!-- <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"> -->
-    <meta name="msapplication-TileColor" content="#3372DF">
-
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!-- <link rel="stylesheet" href="../components/angular-material/angular-material.min.css"> -->
-    <link rel="stylesheet" href="../css/material.blue-red.min.css" /> 
-    <!-- <link rel="stylesheet" href="../css/material.min.css"> -->
-    <link rel="stylesheet" href="../css/article.css">
-    <link rel="stylesheet" href="../css/styles.css">
-
-    <link rel="stylesheet" href="../components/highlightjs/styles/darkula.css">
-    
-  </head>
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" ng-app="csc-456-app">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="HomeController">
-      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>CSC 456/556 Advanced Web Development</h3>
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#overview" ng-click="deepLinkToTab('overview');" class="mdl-layout__tab">Overview</a>
-          <a href="#chapters"  ng-click="deepLinkToTab('chapters');" class="mdl-layout__tab">Chapters</a>
-          <a href="#adventures" id="adventures-tab" ng-click="deepLinkToTab('adventures');" class="mdl-layout__tab is-active">Adventures</a>
-          <a href="#badges" ng-click="deepLinkToTab('badges');" class="mdl-layout__tab">Badges</a>
-          <a href="#instructions" ng-click="deepLinkToTab('instructions');" class="mdl-layout__tab">Rule Book</a>
-         </div>
-      </header>
-      <div class="demo-ribbon"></div>
-      <main class="demo-main mdl-layout__content">
-        <div class="demo-container mdl-grid">
-          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-            <div class="demo-crumbs mdl-color-text--grey-500">
-              Adventure &gt; 2 &gt; Guessing Game Revamped
-            </div>
-
-            <h3>Revamp the Guessing Game</h3>
-              This adventure will consists of 4 parts
-              <ul class="toc">
-                <a href="#expressions">Rewrite with expressions</a>
-                <a href="#jstl">Rewrite with jstl</a>
-                <a href="#gradle">Gradle, Gradle, Gradle</a>
-                <a href="#profile">User Profile Page</a>
-              </ul>
-
-              <h4>Setup</h4>
-              Create a folder called "adventure2" for all your work for this adventure. This folder will be checked into your repository on github. 
-              
-              <h4 id="expressions">Rewrite with <small>${expressions}</small></h4>
-              <section>
-                The guessing game was a really simple program but using scriptlet tags can be pretty nasty. Let's rewrite the game but use expressions instead to help clean up our code. 
-                <br><br>
-                Create a directory called <em>guessing-expressions</em> in the <em>adventure2</em> directory. 
-                <pre>/adventure2/guessing-expressions/</pre>
-                Copy the jsp and folder structure from the previous adventure into this folder. If you run this new app in tomcat, it should work just like the game from the last adventure. Go ahead and run this in tomcat to make sure the project structure is correct and the app is working. 
-                <br><br>
-                Go through the app and replace all scriptlet tags that output in the html to expressions. Basically, convert:
-                <pre><code class="java">&lt;%= ... %&gt;</code></pre>
-                into:
-                <pre><code class="java">${ ... }</code></pre>
-                This is supposed to be a really small and easy adventure. There should be a minimum of 3 replacements. Take a screen shot of the app still working after the changes. Save the screen shots in the <em>adventure2</em> directory and push to your repository on Github.
-              </section>
-
-              <h4 id="jstl">Rewrite with jstl</h4>
-              <section>
-                Expressions are nice and all but they are pretty limited with functionality. Let's rewrite the game one more time without using any scriptlet tags. 
-                <br><br>
-                Create a directory called <em>guessing-jstl</em> in the <em>adventure2</em> directory. 
-                <pre>/adventure2/guessing-jstl/</pre>
-                Copy the guessing game code and folders from the guessing-expressions app. Run this new app in tomcat to make sure everything still runs correctly. 
-                <br><br>
-                Go through the app and replace all scriptlet tags with the correct core jstl tags. For example the if statement in the scriptlet tag will become an &lt;c:if /&gt; tag and the if-else statement will become a &lt;c:choose /&gt; tag. There should be a minimum of 2 replacements. In addition change at least one of the expressions (${...}) to use a core jstl tag. 
-                <br><br>
-                When you are done, there should be <strong>no</strong> scriptlet tags in used in the jsp. Make sure the game still works correctly and take a screen shot of the app. Saved the screen shot in the <em>adventure2</em> directory as well. 
-              </section>
-              
-              <h4 id="gradle">Gradle, Gradle, Gradle</h4>
-              <section>
-                <h4>Gradle</h4>
-                <p>
-                  Download Gradle from Gradleware's website and read about how to install it. <a href="http://www.gradle.org/">Gradle</a>
-                  <br>
-                  Follow the installation instructions <a href="http://www.gradle.org/docs/current/userguide/userguide_single.html#N100CE">here</a>
-                  <br>
-                  To get started, here is the <a href="http://www.gradle.org/docs/current/userguide/userguide_single.html#installation">first step</a>
-
-                  <br><br>
-
-                  Once gradle is installed and setup, create the following directory structure under <em>adventure2</em>.
-
-                  <pre>
+            <pre>
 /adventure2/gradle-intro/
 /adventure2/gradle-intro/src/
 /adventure2/gradle-intro/src/main/
@@ -146,9 +72,9 @@
 /adventure2/gradle-intro/src/main/java/edu/nku/csc456/profile/
 /adventure2/gradle-intro/src/main/webapp/
 /adventure2/gradle-intro/src/main/webapp/WEB-INF/</pre>
-                  
-                  The <em>/edu/nku/csc456/profile/</em> corresponds to what is called a package in java. The first line in the java file defines the package so that the jvm can index the class file in teh folder structure. In the <em>profile</em> directory, create a file named <em>MD5Util.java</em>. Copy the folling code into the file.
-                  <pre><code class="java">package edu.nku.csc456.profile;
+            
+            The <em>/edu/nku/csc456/profile/</em> corresponds to what is called a package in java. The first line in the java file defines the package so that the jvm can index the class file in teh folder structure. In the <em>profile</em> directory, create a file named <em>MD5Util.java</em>. Copy the folling code into the file.
+            <pre><code class="java">package edu.nku.csc456.profile;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -156,71 +82,71 @@ import java.security.NoSuchAlgorithmException;
 
 public class MD5Util {
 
-  public static String hex(byte[] array) {
-    StringBuffer sb = new StringBuffer();
-    for (int i = 0; i < array.length; ++i) {
-      sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(
-          1, 3));
-    }
-    return sb.toString();
-  }
+public static String hex(byte[] array) {
+StringBuffer sb = new StringBuffer();
+for (int i = 0; i < array.length; ++i) {
+sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(
+    1, 3));
+}
+return sb.toString();
+}
 
-  public static String md5Hex(String message) {
-    try {
-      MessageDigest md = MessageDigest.getInstance("MD5");
-      return hex(md.digest(message.getBytes("CP1252")));
-    } catch (NoSuchAlgorithmException e) {
-    } catch (UnsupportedEncodingException e) {
-    }
-    return null;
-  }
+public static String md5Hex(String message) {
+try {
+MessageDigest md = MessageDigest.getInstance("MD5");
+return hex(md.digest(message.getBytes("CP1252")));
+} catch (NoSuchAlgorithmException e) {
+} catch (UnsupportedEncodingException e) {
+}
+return null;
+}
 }</code></pre>
-                Assuming your folder structure is correct, everything should compile when we go to use gradle. 
-                <br><br>
-                Let's add one more file so that we can test this gradle app. Download and copy the <a href="adventure2/profile.jsp">profile.jsp</a> file into the <em>/webapp/</em> directory. 
-                <br><br>
-                Next, in the <em>/gradle-intro/</em> folder, create a file called <em>build.gradle</em>. Copy the follow code into the file
-                <pre><code class="groovy">apply plugin: 'war'
+          Assuming your folder structure is correct, everything should compile when we go to use gradle. 
+          <br><br>
+          Let's add one more file so that we can test this gradle app. Download and copy the <a href="adventure2/profile.jsp">profile.jsp</a> file into the <em>/webapp/</em> directory. 
+          <br><br>
+          Next, in the <em>/gradle-intro/</em> folder, create a file called <em>build.gradle</em>. Copy the follow code into the file
+          <pre><code class="groovy">apply plugin: 'war'
 
 war {
-    baseName = 'gradle-intro'
+baseName = 'gradle-intro'
 }</code></pre>
-                From the command line, change directory to <em>/gradle-intro/</em> and run the following command.
-                <pre><code>$&gt; gradle build</code></pre>
-                This should generate a new directory called <em>/build/</em>. Inside build should be another folder called <em>libs</em> with a <em>war</em> file inside that. You should see something like this:
-                <pre>
-                  /adventure2/gradle-intro/build/
-                  /adventure2/gradle-intro/build/libs/
-                  /adventure2/gradle-intro/build/libs/gradle-intro.war
-                </pre>
-                  Copy the <em>gradle-intro.war</em> to the webapps directory in your topcat server. Wait a few seconds for tomcat to figure out a new war file has been dropped into its webapp's directory. Tomcat will automatically start deploying the new app. If you do to <a href="http://localhost:8080/gradle-intro/profile.jsp">http://localhost:8080/gradle-intro/profile.jsp</a>, you should see a page that says hello and has a default gravitar image. We will talk more about gravitar images in the next section. It should look very similar to this image:
-                  <br>
-                  <img alt="gradle profile screen shot" src="../images/gradle_intro_profile.png" />
-                  <br>
-                  Play around with the email address used in the jsp. If you havea gravitar, then go ahead and use your email address.
-                  <br><br>
-                  Take a screen shot of the app running and the console output from running the 'gradle build' command. Save these screen shots in the <em>adventure2</em> directory so that they get pushed to your repository when you complete your adventure. 
+          From the command line, change directory to <em>/gradle-intro/</em> and run the following command.
+          <pre><code>$&gt; gradle build</code></pre>
+          This should generate a new directory called <em>/build/</em>. Inside build should be another folder called <em>libs</em> with a <em>war</em> file inside that. You should see something like this:
+          <pre>
+            /adventure2/gradle-intro/build/
+            /adventure2/gradle-intro/build/libs/
+            /adventure2/gradle-intro/build/libs/gradle-intro.war
+          </pre>
+            Copy the <em>gradle-intro.war</em> to the webapps directory in your topcat server. Wait a few seconds for tomcat to figure out a new war file has been dropped into its webapp's directory. Tomcat will automatically start deploying the new app. If you do to <a href="http://localhost:8080/gradle-intro/profile.jsp">http://localhost:8080/gradle-intro/profile.jsp</a>, you should see a page that says hello and has a default gravitar image. We will talk more about gravitar images in the next section. It should look very similar to this image:
+            <br>
+            <img alt="gradle profile screen shot" src="app/images/gradle_intro_profile.png" />
+            <br>
+            Play around with the email address used in the jsp. If you havea gravitar, then go ahead and use your email address.
+            <br><br>
+            Take a screen shot of the app running and the console output from running the 'gradle build' command. Save these screen shots in the <em>adventure2</em> directory so that they get pushed to your repository when you complete your adventure. 
 
-                  <h6>Congrats!</h6>
-                  If you made it this far, then that means you have created your first webapp using gradle! It was a lot of setup and hard work but it will pay off the rest of the semester. In the real world, once you setup gradle (or other build tool) on your machine, you never need to touch it again and can focus on the real coding and not the tooling needed to support the coding. However, you still need to setup your machine first. 
+            <h6>Congrats!</h6>
+            If you made it this far, then that means you have created your first webapp using gradle! It was a lot of setup and hard work but it will pay off the rest of the semester. In the real world, once you setup gradle (or other build tool) on your machine, you never need to touch it again and can focus on the real coding and not the tooling needed to support the coding. However, you still need to setup your machine first. 
 
-                  <br><br>
-                  Let's do one more exercise with gradle, then you never have to worry about gradle again (at least until we go over gradle in more detail later in our adventures)
-                  <br><br>
-                  Read about how to <a href="http://www.gradle.org/docs/current/userguide/tutorial_using_tasks.html">create tasks</a> with gradle and create a hello world task. Modify your task to print the current time. Take a screen shot of your console after running your hello world task and save it in the <em>adventure2</em> directory.
-              </section>
+            <br><br>
+            Let's do one more exercise with gradle, then you never have to worry about gradle again (at least until we go over gradle in more detail later in our adventures)
+            <br><br>
+            Read about how to <a href="http://www.gradle.org/docs/current/userguide/tutorial_using_tasks.html">create tasks</a> with gradle and create a hello world task. Modify your task to print the current time. Take a screen shot of your console after running your hello world task and save it in the <em>adventure2</em> directory.
+        </section>
 
-              <h4 id="profile">User Profile Page</h4>
-              <section>                
-                Let's build a profile creation form and profile page for our users. With this new app, we will combine everything we have done so far and add one more new thing, servlets! 
-                <br><br>
-                Before you begin, let me ask you if you have heard of a gravatar? A gravatar is like an avatar to represent your online image. Basically your facebook, google+, twitter, wordpress, and other online profile have a profile picture for you and that profile picture is essentially your avatar. There is a site called gravatar which can manage these images for you. Check out <a href="https://en.gravatar.com/">Gravatar's</a> website if you have never seen it before. Gravatar is a free and open service for anyone to integrate into. It basically hosts a service that needs a hash of your email address. Since most languages support cryptography, Gravatar can be used in a lot of applications no matter which langauge they are written in. Check out the <a href="https://en.gravatar.com/site/implement/">implementations</a> page to see how to integrate into gravatar with a langauge of your choice.  
-                <br><br>
-                We will just use <a href="https://en.gravatar.com/site/implement/images/">image tags to integrate</a> with gravatar for this adventure. By including the profile picture of the user, it gives a personal touch. In order for us to begin, we need to generate a hash. Since we are using Java, lets look at the <a href="https://en.gravatar.com/site/implement/images/java/">java implementation</a> to integrate with gravatar. It should look eerily like the MD5Util class we used in the previous part of this adventure. In fact, that is the java code need hash an email address. We will come back to this later in this adventure. Now that we have covered some of the basics of gravatar, let's start the profile page app.
-                <br><br>
-                Create a new directory called <em>profile-page</em> for this new webapp. In this directory, create the following directories to create a webapp.
+        <h4 id="profile">User Profile Page</h4>
+        <section>                
+          Let's build a profile creation form and profile page for our users. With this new app, we will combine everything we have done so far and add one more new thing, servlets! 
+          <br><br>
+          Before you begin, let me ask you if you have heard of a gravatar? A gravatar is like an avatar to represent your online image. Basically your facebook, google+, twitter, wordpress, and other online profile have a profile picture for you and that profile picture is essentially your avatar. There is a site called gravatar which can manage these images for you. Check out <a href="https://en.gravatar.com/">Gravatar's</a> website if you have never seen it before. Gravatar is a free and open service for anyone to integrate into. It basically hosts a service that needs a hash of your email address. Since most languages support cryptography, Gravatar can be used in a lot of applications no matter which langauge they are written in. Check out the <a href="https://en.gravatar.com/site/implement/">implementations</a> page to see how to integrate into gravatar with a langauge of your choice.  
+          <br><br>
+          We will just use <a href="https://en.gravatar.com/site/implement/images/">image tags to integrate</a> with gravatar for this adventure. By including the profile picture of the user, it gives a personal touch. In order for us to begin, we need to generate a hash. Since we are using Java, lets look at the <a href="https://en.gravatar.com/site/implement/images/java/">java implementation</a> to integrate with gravatar. It should look eerily like the MD5Util class we used in the previous part of this adventure. In fact, that is the java code need hash an email address. We will come back to this later in this adventure. Now that we have covered some of the basics of gravatar, let's start the profile page app.
+          <br><br>
+          Create a new directory called <em>profile-page</em> for this new webapp. In this directory, create the following directories to create a webapp.
 
-                <pre>/adventure2/profile-page/
+          <pre>/adventure2/profile-page/
 /adventure2/profile-page/
 /adventure2/profile-page/src/
 /adventure2/profile-page/src/main/
@@ -231,108 +157,62 @@ war {
 /adventure2/profile-page/src/main/java/edu/nku/csc456/profile/
 /adventure2/profile-page/src/main/webapp/
 /adventure2/profile-page/src/main/webapp/WEB-INF/
-                </pre>
-                Copy the MD5Util class from the previous part of this adventure
-                <pre>/adventure2/profile-page/src/main/java/edu/nku/csc456/profile/MD5Util.java</pre>
-                Download <a href="adventure2/create-profile.html">create-profile.html</a> form into the <em>webapp</em> directory. 
-                <br>
-                Download <a href="adventure2/web.xml">web.xml</a> into the <em>webapp/WEB-INF</em> directory. 
-                <br>
-                Download <a href="adventure2/ProfileServlet.java">ProfileServlet.java</a> into the <em>src/main/java/edu/nku/csc456/profile/</em> directory. 
-                <br>
-                Your project should look like the following:
-                <pre>/adventure2/profile-page/src/main/java/edu/nku/csc456/profile/ProfileServlet.java
+          </pre>
+          Copy the MD5Util class from the previous part of this adventure
+          <pre>/adventure2/profile-page/src/main/java/edu/nku/csc456/profile/MD5Util.java</pre>
+          Download <a href="adventure2/create-profile.html">create-profile.html</a> form into the <em>webapp</em> directory. 
+          <br>
+          Download <a href="adventure2/web.xml">web.xml</a> into the <em>webapp/WEB-INF</em> directory. 
+          <br>
+          Download <a href="adventure2/ProfileServlet.java">ProfileServlet.java</a> into the <em>src/main/java/edu/nku/csc456/profile/</em> directory. 
+          <br>
+          Your project should look like the following:
+          <pre>/adventure2/profile-page/src/main/java/edu/nku/csc456/profile/ProfileServlet.java
 /adventure2/profile-page/src/main/java/edu/nku/csc456/profile/MD5Util.java 
 /adventure2/profile-page/src/main/webapp/create-profile.html
 /adventure2/profile-page/src/main/webapp/WEB-INF/web.xml
-                </pre>
-                We are almost done with the project setup. Once you get more XP, this project setup will become second hand and not take nearly as much time. 
-                <br>
-                We need a build script for gradle to be able to build the project. Copy the <em>build.gradle</em> from the previous part of this adventure but change the baseName variable to 'profile-page'.
+          </pre>
+          We are almost done with the project setup. Once you get more XP, this project setup will become second hand and not take nearly as much time. 
+          <br>
+          We need a build script for gradle to be able to build the project. Copy the <em>build.gradle</em> from the previous part of this adventure but change the baseName variable to 'profile-page'.
 <pre><code class="groovy">apply plugin: 'war'
 
 war {
-    baseName = 'profile-page'
+baseName = 'profile-page'
 }</code></pre>
-                Build the webapp using gradle and copy the war file into tomcat's webapp directory. See the previous part of the adventure about where the war file will be after building with gradle.
-                <pre><code>$&gt; gradle build</code></pre>
-                This application should be running at <a href="http://localhost:8080/profile-page/create-profile.html">http://localhost:8080/profile-page/create-profile.html</a> if everything is working as expected. 
-                <br><br>
-                Let's take a closer look at what we have so far for our implementation of our profile creation page. 
-                <br><br>
-                How does the data from the form get into the servlet? Here is our (condensed) servlet:
-        <pre><code>public class HelloServlet extends HttpServlet {
+          Build the webapp using gradle and copy the war file into tomcat's webapp directory. See the previous part of the adventure about where the war file will be after building with gradle.
+          <pre><code>$&gt; gradle build</code></pre>
+          This application should be running at <a href="http://localhost:8080/profile-page/create-profile.html">http://localhost:8080/profile-page/create-profile.html</a> if everything is working as expected. 
+          <br><br>
+          Let's take a closer look at what we have so far for our implementation of our profile creation page. 
+          <br><br>
+          How does the data from the form get into the servlet? Here is our (condensed) servlet:
+  <pre><code>public class HelloServlet extends HttpServlet {
 
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String firstName = request.getParameter("first_name");
-    String lastName = request.getParameter("last_name");
-    response.getWriter().println("&lt;html&gt;&lt;body&gt;&lt;h1 align=center&gt;Hello!  " + firstName + "  " + lastName + "&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;");
-  }
+public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+String firstName = request.getParameter("first_name");
+String lastName = request.getParameter("last_name");
+response.getWriter().println("&lt;html&gt;&lt;body&gt;&lt;h1 align=center&gt;Hello!  " + firstName + "  " + lastName + "&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;");
+}
 
 }</code></pre>
-    Well it comes in through the request. Lets take a closer look:
-    <pre><code>
+Well it comes in through the request. Lets take a closer look:
+<pre><code>
 public void doPost(HttpServletRequest request, HttpServletResponse response)</code></pre>
-    We get the request in the signature of the doPost method. Why did we implement doPost? Why not doGet?
-    <br><br>
-    The request contains a <em>getParameter</em> method. There is also a <em>getParameters</em> which return a <em>String[]</em>. This will be useful for form items that can have mutliple values. What kinds of form elements can submit multiple values? 
-    <pre><code>String firstName = request.getParameter("first_name");</code></pre>
-    Basically, there is a map of parameters and their values stored in the request. It is a map of String (input element name) to String[] (input element values). <em>getParameter</em> will return the first item in the String[] for you, as a convience method. However, if you are expecting a String[] but call <em>getParameter</em> instead of <em>getParameter<strong>s</strong></em>, this can lead to bugs in your code.
-    <br><br>
-     HTTP is just a protocol that allows us to only communicate between the server and client by passing strings. So if we had a user object, we would have to map it manually from the request. 
-     <br><br>
-     Complete the implementation of creating a user's profile by showing the user their submitted information and their gravatar image. (hint: for the gravatar image, use the MD5Util class). Yes, this is going to be a very monotonous adventure because you have to write out all of the html by hand as a string in java. After this adventure, we will look at better and cleaner ways to keep the html seperate from the java. If you wish to be brave enough to seperate the java from the html by using jsps, I will salute your effort!
-     <br><br>
-     Take a screen shot of your submitted form and save it in the <em>adventure2</em> folder. When you are done, make sure to push your solution to github. It is okay to commit and push often, I will pull and grade after the due date. 
-              </section>
-              
-          </div>
-        </div>
+We get the request in the signature of the doPost method. Why did we implement doPost? Why not doGet?
+<br><br>
+The request contains a <em>getParameter</em> method. There is also a <em>getParameters</em> which return a <em>String[]</em>. This will be useful for form items that can have mutliple values. What kinds of form elements can submit multiple values? 
+<pre><code>String firstName = request.getParameter("first_name");</code></pre>
+Basically, there is a map of parameters and their values stored in the request. It is a map of String (input element name) to String[] (input element values). <em>getParameter</em> will return the first item in the String[] for you, as a convience method. However, if you are expecting a String[] but call <em>getParameter</em> instead of <em>getParameter<strong>s</strong></em>, this can lead to bugs in your code.
+<br><br>
+HTTP is just a protocol that allows us to only communicate between the server and client by passing strings. So if we had a user object, we would have to map it manually from the request. 
+<br><br>
+Complete the implementation of creating a user's profile by showing the user their submitted information and their gravatar image. (hint: for the gravatar image, use the MD5Util class). Yes, this is going to be a very monotonous adventure because you have to write out all of the html by hand as a string in java. After this adventure, we will look at better and cleaner ways to keep the html seperate from the java. If you wish to be brave enough to seperate the java from the html by using jsps, I will salute your effort!
+<br><br>
+Take a screen shot of your submitted form and save it in the <em>adventure2</em> folder. When you are done, make sure to push your solution to github. It is okay to commit and push often, I will pull and grade after the due date. 
+        </section>
         
-
-      <footer class="mdl-mega-footer">
-          <div class="mdl-mega-footer--middle-section">        
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Contact Me</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li>Benjamin Baxter</li>
-                <li><a href="mailto:baxterb2@nku.edu">Email</a></li>
-                <li>Office: GH 460</li>
-                <li>Office Hours by Appointment</li>
-                <li><a href="index.html">Website</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="mdl-mega-footer--bottom-section">
-            <div class="mdl-logo">
-              More Information
-            </div>
-            <ul class="mdl-mega-footer--link-list">
-              <!-- <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li> -->
-              <li><a href="index.html">Home Page</a></li>
-              <li><a href="https://github.com/orgs/csc456fall2015/dashboard">Github Course Organization</a>
-              <li><a href="http://nku.benjamingbaxter.com">Benjamin Baxter's Courses</a></li>
-              <li><a href="http://www.nku.edu" target="_blank">NKU</a></li>
-              <li><a href="http://learnonline.nku.edu" target="_blank">Blackboard</a></li>
-            </ul>
-          </div>
-        </footer>
-      </main>
     </div>
-
-    <script src="../js/mdl.min.js"></script>
-    <script src="../components/angular/angular.min.js"></script>
-    <script src="../components/angular-aria/angular-aria.min.js"></script>
-    <script src="../components/angular-animate/angular-animate.min.js"></script>
-    <script src="../components/angular-material/angular-material.min.js"></script>
-    <script src="http://crisbeto.github.io/angular-svg-round-progressbar/roundProgress.js"></script>
-
-    <script src="../js/ng-app.js"></script>
-    <script src="../js/ng-home.js"></script>
-
-    <script src="../components/highlightjs/highlight.pack.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-  </body>
-</html>
+  </div>
+  
+</main>

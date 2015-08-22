@@ -22,6 +22,14 @@
   list-style: none;
 }
 
+.ninja {
+  display : none;
+}
+
+.clumsy-ninja {
+  display : block;
+}
+
 .ellipsis {
   display: block; /* Fallback for non-webkit */
   display: -webkit-box;

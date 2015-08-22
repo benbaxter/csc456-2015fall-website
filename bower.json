@@ -29,6 +29,7 @@
   ],
   "dependencies": {
     "angular-material": "~0.10.0",
+    "angular-ui-router": "0.2.15",
     "highlightjs" : "8.7.0"
   }
 }

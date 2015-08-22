@@ -1,0 +1,44 @@
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+    <i class="material-icons">new_releases</i>
+  </header>
+  <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-card__supporting-text">
+      <h4>Badges</h4>
+      <p>
+        For those who are more adventurous, try these challenges to earn badges and more experience points! To submit your work for a badge, push it into your git repo and <a href="mailto:baxterb2@nku.edu">email me</a> so I know to look for it when I grade.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section--center mdl-grid mdl-grid--no-spacing">
+  <div class="mdl-cell mdl-cell--12-col">
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col" ng-repeat="b in badges">
+
+        <div class="mdl-card mdl-shadow--2dp demo-card-event" ng-click="toggleBadgeDescription(b);">
+          <div class="mdl-card__title mdl-card--expand mdl-color--primary">
+            <h4>
+              {{b.title}}
+            </h4>
+          </div>
+          <div class="mdl-card__supporting-text ellipsis" ng-bind-html="b.description" id="badge-{{b.id}}">
+          </div>
+          <div class="mdl-card__actions mdl-card--border mdl-color--primary mdl-color-text--white">
+            {{b.xp}}
+            <div class="mdl-layout-spacer"></div>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+              <i id="badge-arrow-{{b.id}}" class="material-icons">keyboard_arrow_down</i>
+            </button>
+          </div>
+          <div class="mdl-card__menu">
+            <i class="material-icons mdl-color-text--white">{{b.badge}}</i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

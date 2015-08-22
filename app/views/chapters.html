@@ -1,0 +1,111 @@
+
+          
+  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+      <i class="material-icons">book</i>
+    </header>
+    <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+      <div class="mdl-card__supporting-text">
+        <h4>Chapters</h4>
+        <div>
+          Each chapter will unveil the next step in your journey. 
+          <br>
+          <h5>This week's chapter!</h5>
+
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--7-col-phone">
+              <div class="mdl-card__title-text mdl-color-text--white" ng-class="getClassFromChapter(featureChapter);" style="padding: 15px;">
+                {{featureChapter.date}}
+                <div class="mdl-layout-spacer"></div>
+                <i class="material-icons mdl-color-text--white">event</i>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--9-col-tablet mdl-cell--7-col-phone">
+              <section>
+                <div ng-show="featureChapter.topics && featureChapter.topics.length == 1">
+                  {{featureChapter.topics[0]}}
+                </div>
+                <div ng-show="featureChapter.topics && featureChapter.topics.length > 1">
+                  Topics:
+                  <ul>
+                    <li ng-repeat="top in featureChapter.topics">{{top}}</li>
+                  </ul>                        
+                </div>
+                <div ng-show="featureChapter.readings">
+                  <span ng-if="!featureChapter['boss-fight']">
+                    Readings:
+                  </span>
+                  <ul ng-class="getListStyleForList(featureChapter.readings)">
+                    <li ng-repeat="read in featureChapter.readings">{{read}}</li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+            <div class="mdl-card__actions mdl-card--border" ng-show="featureChapter.slides">
+                Slides:
+                <a 
+                   ng-repeat="slide in featureChapter.slides"
+                   ng-href="{{slide}}" 
+                   target="_blank" 
+                   class="mdl-button mdl-js-button mdl-button--icon">
+                  <i class="material-icons">cloud_download</i>
+                </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--center mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--12-col">
+
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col" ng-repeat="chap in chapters">
+          <div class="mdl-card mdl-shadow--2dp demo-card-event">
+            <div class="mdl-card__title mdl-card--expand" ng-class="getClassFromChapter(chap)">
+              <div class="mdl-card__title-text">
+                <i ng-show="featureChapter === chap" class="material-icons">star</i>{{chap.date}}
+              </div>
+            </div>
+            <div class="mdl-card__supporting-text mdl-card--expand">
+              <section>
+                <h4 ng-show="chap.topics && chap.topics.length == 1">
+                  {{chap.topics[0]}}
+                </h4>
+                <h5 ng-show="chap.topics && chap.topics.length > 1">
+                  Topics:
+                  <ul>
+                    <li ng-repeat="top in chap.topics">{{top}}</li>
+                  </ul>                        
+                </h5>
+                <p ng-show="chap.readings">
+                  <span ng-if="!chap['boss-fight']">
+                    Readings:
+                  </span>
+                  <ul ng-class="getListStyleForList(chap.readings)">
+                    <li ng-repeat="read in chap.readings">{{read}}</li>
+                  </ul>
+                </p>
+              </section>
+            </div>
+            <div class="mdl-card__actions mdl-card--border" ng-show="chap.slides">
+                Slides:
+                <a 
+                   ng-repeat="slide in chap.slides"
+                   ng-href="{{slide}}" 
+                   target="_blank" 
+                   class="mdl-button mdl-js-button mdl-button--icon">
+                  <i class="material-icons">cloud_download</i>
+                </a>
+            </div>
+            <div class="mdl-card__menu">
+              <i class="material-icons mdl-color-text--white">event</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
