@@ -54,10 +54,10 @@
 			var classDate = new Date(2015, classMonth, classDay);
 			var sundayBefore = new Date(2015, classMonth, classDay);
 			sundayBefore.setDate(sundayBefore.getDate() - sundayBefore.getDay());
-			var saturdayAfter = new Date(2015, classMonth, classDay);
-			saturdayAfter.setDate(saturdayAfter.getDate() + saturdayAfter.getDay() - 2);
-
-			if(today > sundayBefore && today < saturdayAfter) {
+			var sundayAfter = new Date(2015, classMonth, classDay);
+			sundayAfter.setDate(sundayAfter.getDate() + sundayAfter.getDay() - 1);
+			
+			if(today > sundayBefore && today < sundayAfter) {
 				featureChapter = value;
 			}
 		});
