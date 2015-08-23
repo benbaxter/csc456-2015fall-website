@@ -14,4 +14,11 @@ header('Access-Control-Allow-Origin: *');
 	"overview" : "Rewrite the guessing game with expressions and core jstl, setup gradle, create a simple user profile page.",
 	"date" : "9/10",
 	"id" : 2
+}, {
+	"title" : "Main Quest",
+	"xp" : "500 xp",
+	"overview" : "Build 'The Voting Game' as an online application that you and your friends can play.",
+	"date" : "11/19",
+	"feature" : true,
+	"id" : 11
 }]

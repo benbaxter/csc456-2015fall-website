@@ -18,17 +18,6 @@
 		return progress;
 	}
 
-	function getQueryVariable(variable) {
-	    var query = window.location.search.substring(1);
-	    var vars = query.split('&');
-	    for (var i = 0; i < vars.length; i++) {
-	        var pair = vars[i].split('=');
-	        if (decodeURIComponent(pair[0]) == variable) {
-	            return decodeURIComponent(pair[1]);
-	        }
-	    }
-	}
-
 	function goToTab(tab, tabPanel) {
     	angular.element(document.querySelectorAll("a.mdl-layout__tab")).removeClass("is-active");
     	angular.element(document.querySelectorAll(".mdl-layout__tab-panel")).removeClass("is-active");
@@ -101,10 +90,6 @@
 	        };
 	    };
 
-	    $scope.deepLinkToTab = function(tab) {
-	    	window.location.href = "../../index.html?tab=" + tab;
-	    }
-
 	    $scope.goToOverview = function() {
 	    	goToTab("#overview", "#overview-tab");
 	    };
@@ -124,10 +109,6 @@
 	    $scope.goToInstructions = function() {
 	    	goToTab("#instructions", "#instructions-tab");
 	    };
-
-	    $scope.goToAdventure = function(num) {
-	    	window.location.href = "app/views/adventure_" + num + ".html";
-	    }
 
 	    ChapterFactory.getChapters()
 	    	.success(function(chapters) {
@@ -178,6 +159,8 @@
 	    $scope.getClassForAdventure = function(adventure) {
 	    	if( isDateInPast(adventure.date) ) {
 	    		return "mdl-color--accent";
+	    	}  else if ( adventure.feature ) {
+				return "mdl-color--teal-100";
 	    	}
 	    	
 	    	return "mdl-color--primary";
@@ -189,22 +172,6 @@
 	    	}
 	    	return "";
 	    }
-
-	    var deepLinkTab = getQueryVariable("tab");
-		if(deepLinkTab) {
-			if( deepLinkTab == "overview" ) {
-				$scope.goToOverview();
-			} else if( deepLinkTab == "chapters" ) {
-				$scope.goToChapters();
-			} else if( deepLinkTab == "adventures" ) {
-				$scope.goToAdventures();
-			} else if( deepLinkTab == "badges" ) {
-				$scope.goToBadges();
-			} else if( deepLinkTab == "instructions" ) {
-				$scope.goToInstructions();
-			} 
-		}
-
     } );
 
     angular.module( 'csc-456-app' )
