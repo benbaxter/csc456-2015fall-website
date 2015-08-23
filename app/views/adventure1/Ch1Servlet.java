@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Ch1Serv extends HttpServlet {
+public class Ch1Servlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest request,
 			HttpServletResponse response)
