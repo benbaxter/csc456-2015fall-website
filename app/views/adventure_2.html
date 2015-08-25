@@ -103,7 +103,7 @@ return null;
 }</code></pre>
           Assuming your folder structure is correct, everything should compile when we go to use gradle. 
           <br><br>
-          Let's add one more file so that we can test this gradle app. Download and copy the <a href="adventure2/profile.jsp">profile.jsp</a> file into the <em>/webapp/</em> directory. 
+          Let's add one more file so that we can test this gradle app. Download and copy the <a href="app/views/adventure2/profile.jsp">profile.jsp</a> file into the <em>/webapp/</em> directory. 
           <br><br>
           Next, in the <em>/gradle-intro/</em> folder, create a file called <em>build.gradle</em>. Copy the follow code into the file
           <pre><code class="groovy">apply plugin: 'war'
@@ -160,11 +160,11 @@ baseName = 'gradle-intro'
           </pre>
           Copy the MD5Util class from the previous part of this adventure
           <pre>/adventure2/profile-page/src/main/java/edu/nku/csc456/profile/MD5Util.java</pre>
-          Download <a href="adventure2/create-profile.html">create-profile.html</a> form into the <em>webapp</em> directory. 
+          Download <a href="app/views/adventure2/create-profile.html">create-profile.html</a> form into the <em>webapp</em> directory. 
           <br>
-          Download <a href="adventure2/web.xml">web.xml</a> into the <em>webapp/WEB-INF</em> directory. 
+          Download <a href="app/views/adventure2/web.xml">web.xml</a> into the <em>webapp/WEB-INF</em> directory. 
           <br>
-          Download <a href="adventure2/ProfileServlet.java">ProfileServlet.java</a> into the <em>src/main/java/edu/nku/csc456/profile/</em> directory. 
+          Download <a href="app/views/adventure2/ProfileServlet.java">ProfileServlet.java</a> into the <em>src/main/java/edu/nku/csc456/profile/</em> directory. 
           <br>
           Your project should look like the following:
           <pre>/adventure2/profile-page/src/main/java/edu/nku/csc456/profile/ProfileServlet.java
