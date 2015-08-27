@@ -10,11 +10,53 @@
 
       <h3>The Voting Game</h3>
 
-        <h4>Coming Soon!</h4>
-        <span style="visibility: hidden">
-        Create a folder called "adventure1" for all your work for this adventure. This folder will be checked into your repository on github. On github, you will have one repository as part of an organization. This is where you will upload all of your adventures to be graded. Create a directory/folder on your computer that will contain all of your adventures for this course. For example:
-        </span>
+        <h4>Summary</h4>
+        You and your group will be building a card game and making it an online card game that you can play with your friends. You will be able to create games, invite friends, track rankings with friends, and more! 
+
+        <ul class="toc">
+          <a href="#requirements">Requirements</a>
+          <a href="#grading_criteria">Grading Criteria</a>
+          <a href="#implmentation">Project Implmentation</a>
+          <a href="#presentation">Presentation</a>
+        </ul>
+
+        <h4 id="requirements">Requirements</h4>
+
+        <ol class="requirements">
+        	<li>As a <span class="text-primary">user</span>, I should be able to create a game.
+        		<ol><li>As a <span class="text-primary">user</span>, I should be able to create new question cards that will ask any question the user inputs for that card. (Imagine having blank cards that you can write your questions on)</li></ol>
+        	</li>
+        	<li>As a <span class="text-primary">user</span>, I should be able to invite people to a game I created. I can send invites via email and facebook. 
+        		<ol><li>(For extra credit, let the user set preferences for how they wish to be notified for being invited email vs. facebook vs. desktop notification vs. what ever other notifications you allow)</li></ol>
+        	</li>
+        	<li>As a <span class="text-primary">user</span>, I should be able to join a game.</li>
+        	<li>As a <span class="text-accent">system</span>, I will allow a game to be started once 5 or more people join.</li>
+        	<li>As a <span class="text-primary">user</span>, if I created a game, I should be notified once 5 people have joined the game. </li>
+        	<li>As a <span class="text-primary">user</span>, if I created a game, I should be able to start the game once it has enough players.</li>
+        	<li>As a <span class="text-primary">user</span>, once a game is started, I should not be able to join.</li>
+        	<li>As a <span class="text-accent">system</span>, I should randomly pick a question to show the players.
+        		<ol><li>This question must be a unique question to this game. Aka no duplicates questions may be asked during one game</li></ol>
+        	</li>
+        	<li>As a <span class="text-primary">user</span>, I should be able to vote for anthoer player as my answer to the question.</li>
+        	<li>As a <span class="text-accent">system</span>, I should collect all of the answers and once I have them all, I should show the players who had the most votes. (Note: What about ties? The player with the most votes wins this round.)</li>
+        	<li>As a <span class="text-accent">system</span>, I should repeat asking questions (dealing question cards) and collecting answers until one player has won 5 times.</li>
+        	<li>As a <span class="text-accent">system</span>, once somoeone has won 5 times, I should notify all the players who the winner is.</li>
+        	<li>As a <span class="text-accent">system</span>, I should archive the game and the statistics for all of the players in the game so that they may go back and see how many games they won/lost.</li>
+        	<li>As a <span class="text-primary">user</span>, I should be able to login and see my ranking and compare how many games I won with my friends. (Think leaderboards)</li>
+        	<li>As a <span class="text-accent">system</span>, I should provide a way for an admin user to upload a bulk set of questions that would be used for all the games.</li>
+        	<li>As a <span class="text-primary">user</span>, I should be able to register and create an account.</li>
+        	<li>As a <span class="text-primary">user</span>, I should be able to sign in with Facebook, Google, or any other social network by using oauth</li> 
+        </ol>
+
         
+        <h4 id="grading_criteria">Grading Criteria</h4>
+        Each team should submit all project files by pushing to their teams git repo on github before or on the due date of the project. You should include a build file in it for building your project into a WAR file for deployment in Tomcat.
+
+        <h5 id="implmentation">Project Implmentation <small>450 xp</small></h5>
+        The project should demostrate the above requirements.
+
+        <h5 id="presentation">Presentation <small>50 xp</small></h5>
+        Each team will be given 15-20 minutes to do the project demo. It should include a discussion about the design and implementation of the project followed by a live project demo in class.
     </div>
   </div>
 </main>

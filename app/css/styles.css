@@ -18,6 +18,22 @@
   background-color: #EF3C79;
 }
 
+.text-primary {
+  color: rgb(33,150,243);
+}
+
+.text-accent {
+  color: rgb(255,82,82);
+}
+
+ol.requirements {
+  list-style-type: upper-roman;
+}
+
+ol.requirements li ol {
+  list-style-type: lower-alpha;
+}
+
 .no-list-style {
   list-style: none;
 }

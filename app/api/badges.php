@@ -69,9 +69,15 @@ header('Access-Control-Allow-Origin: *');
 	"description" : "Reseach what Docker is and build an image of your tomcat server with an app installed in tomcat. Document how someone else would be able to use your docker image and have your tomcat server and app up and running.",
 	"id" : 11
 }, {
+	"title" : "Swag",
+	"xp" : "75 xp",
+	"badge" : "mood",
+	"description" : "Build a simple RESTful api that has a few GET and POST methods. You will need at least 4 different rest endpoints to earn credit for this. The endpoints can do anything you want, but at least 2 of them need to accept a payload of data to process (similar to form submission). Look up Swagger (as it pertains to web development not as it pertains towards arrogance) and swagger-ui and have it document your rest api. You should be able to play with your rest api with swagger and test out your code.",
+	"id" : 12
+}, {
 	"title" : "Super Effective!",
 	"xp" : "200 xp",
 	"badge" : "chat",
 	"description" : "Read the book Effective Java by Joshua Bloch and create a small presentation (no more than a 20 minutes) and give it to the class. Please coordinate with me on when you would like to give your presentation so I can adjust the schedule accordingly. This badge will only be awarded to the first person who completes it.",
-	"id" : 12
+	"id" : 13
 }]
