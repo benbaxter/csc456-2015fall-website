@@ -1,0 +1,123 @@
+<div class="demo-ribbon"></div>
+<main class="demo-main mdl-layout__content">
+  <div class="demo-container mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+      <div class="demo-crumbs mdl-color-text--grey-500">
+        Adventure &gt; 3 &gt; Mirror Mirror on the Wall
+      </div>
+
+      <h3>Mirror Mirror on the Wall</h3>
+        In this adventure, we will be using reflections in java. 
+
+        <h4>Bored Game Nerd</h4>
+        <div>
+        	For those who are big table top gamers, then you should be familar with <a href="http://boardgamegeek.com/">boardgamegeek.com</a>. We are going to use this site as a template for content while we build out a dispatching servlet that works very similar to how tomcat works under the covers.
+        	<br><br>
+
+        	I have created a starting place for you. Please <strong>clone</strong> the starter project from the class org repository. If you are unfamilar with how to clone a repo in git or cannot find the instructions in the right hand side of the github page then check out git's <a href="http://git-scm.com/docs/git-clone">documentation</a> on the command.
+        	<br><br>
+        	<a class="mdl-button mdl-js-button mdl-button--primary" href="https://github.com/csc456fall2015/bored-game-nerd">Bored Game Nerd Starter Project</a>
+        </div>
+        
+        <h4>The First Baby Step</h4>
+        <section>
+        	The project you just cloned is not complete nor will it run in tomcat. You must first finsh the setup of the project.  Before continuing, please look over the project.
+        	<br><br>
+        	Look at the project and the files that are included. What is missing?
+        	<br><br>
+        	That is right, web.xml! You will need to create a web.xml file and register <strong><code>DispatchServlet</code></strong> to a <strong>/dispatch</strong> url. <strong><em>If you do not use a web.xml file you will not get any credit for the adventure</em></strong>
+        	<br><br>
+        	If you have your web.xml file correct then this <a hre="http://localhost:8080/bored-game-nerd/dispatch">link</a> should work. You should be taken to a page that talks about the voting game. 
+        </section>
+
+        <h4>Add Some Content</h4>
+        <section>
+        	Review how the <strong>VotingGamePage</strong> class along with the interface <strong>GamePage</strong> work. Create 4 more pages taking your content from board game geek just like the voting game content. 
+        	<br><br>
+        	Create a page for the following games:
+        	<ul class="toc">
+        		<a href="http://boardgamegeek.com/boardgame/129622/love-letter">Love Letter</a>
+        		<a href="http://boardgamegeek.com/boardgame/150783/antidote">Antidode</a>
+        		<a href="http://boardgamegeek.com/boardgame/70919/takenoko">Takenoko</a>
+        		<a href="http://boardgamegeek.com/boardgame/30549/pandemic">Pandemic</a>
+        	</ul>
+
+        	To test your work, update the <strong>DispatchServlet</strong> with the appropirate game page class. (aka replace the voting game page class with your new class in dispatch servlet to test that your jsp is coming back and has the correct content) 
+        	<br><br>
+        	Create one more page with a game of your choice. You should have a total of 5 game pages when you are done. 
+        </section>
+        <h4>Make the DispatchServlet Actually Dispatch</h4>
+        <section>
+        	Before you start this section, you might want to review the <a href="https://github.com/benbaxter/annotation-example">annotation example</a> if you have not already. 
+
+        	<br><br>
+        	Create a list of classes of game pages in the dispatch servlet.  This list must contain all of the pages you have created already. Review the <a href="https://github.com/benbaxter/annotation-example/blob/master/src/com/benjamingbaxter/annotation/example/ZooKeeper.java">ZooKeeper</a> class in the annotation example if you need to see an example.
+
+        	<br><br>
+
+        	Currently there is a search form in the top right hand corner of the web page for the voting game. The form is setup to submit to <strong>/dispatch</strong> and pass a url parameter called <strong>game</strong> and it will be set to the value of the search string in the text field. The goal is for someone to type in the game (or game path) that they want to see and your app will take the user to that page. 
+
+        	<br><br>
+
+        	Update the <strong>DispatchServlet</strong> class to read the game parameter and find the corrisponding <strong>GamePage</strong> based on a <strong>@GamePath</strong> annotation. <em>You must use the annotation and reflections to get xp for this adventure. If you hard code the mapping of game paramter values to the corrisponding pages, you will not receive credit. </em> 
+        	<br><br>
+        	Hint: use the stream/filter api we talked about in class. <em>If you use a for loop and do not use the stream api from Java 8, you will receive no credit for this adventure.</em>
+
+        	<br><br>
+
+        	To recap, if you go to <a href="http://localhost:8080/bored-game-nerd/dispatch?game=voting-game">http://localhost:8080/bored-game-nerd/dispatch?game=voting-game</a>, then you should see the voting game page and if you go to <a href="http://localhost:8080/bored-game-nerd/dispatch?game=love letter">http://localhost:8080/bored-game-nerd/dispatch?game=love letter</a>, you should go to the love letter page assuming that you set the @GamgePath value to <em>"love letter"</em>.
+
+        </section>
+        <h4>404 &mdash; Game Not Found</h4>
+        <section>
+        	What happens if the user tries to go to a game that our app does not know about? If we do not know the game they requested, we need to show them a friendly 404 page. Let the user know what game it is that they tried to search for and that we do not know about that game. Be creative in your 404 page. 
+
+        	<br><br>
+
+        	If you filter your lists of <code>Class&lt;? extends GamePath&gt;</code> and do not find a <code>Class&lt;? extends GamePath&gt;</code>, then you should take the user to your 404 page.  We talked about this in class; hint: look up the <code>Optional&lt;T&gt;</code> class in java 8.
+
+        </section>
+        <h4>500 &mdash; Error for xp</h4>
+        <section>
+        	If you want to earn extra xp, create an error page for when your app may throw an error. (hint: anytime you need a catch block, your app could have an error) Demostrate how the error could be thrown and take a screen shot of how you can trigger the error. 
+        </section>
+
+        <h4>Game History</h4>
+        <section>
+        	Lastly, the app needs one more feature. Build a history page that keeps track of the games the user views for that session. Use <strong>HttpSession</strong> to keep track of the user's behavoir. 
+        	
+        	<br><br>
+        	
+        	Hint: if you need access to the user's session, you can always get it from the request. <code>request.getSession()</code>
+
+        	<br><br>
+
+        	Whenever the user goes to the Dispatch Servlet, you will need to add the game they are looking for to a 'stack'. You can access data that you put in the user's session by querying for a variable, similarly to how you get data off of a request. 
+        	<pre><code>HttpSession session = request.getSession();
+						Stack&lt;String&gt; history = (Stack&lt;String&gt;) session.getAttribute("some key to save the history in session");</code></pre>
+
+			Once you have updated the stack, you can save the history in the user's session by calling the setAttribute method.
+			<pre><code>HttpSession session = request.getSession();
+					session.setAttribute("some key to save the history in session", history);</code></pre>
+
+			Create a History Page that your DispatchServlet will delegate too. Even though it is not a game page, you will still need to figure out a way to use the DispatchServlet to delegate to the history page. 
+
+			<br><br>
+
+			The history page will set the request attribute before forwarding to a jsp. The jsp will need to use the core jstl tag (&lt;c:foreach /&gt;) to display the history to the user. 
+
+			<br><br> 
+			Since we are not using a database, we do not need to worry about keeping track of the user's history forever. Instead, we only care about what they do from the first time they come to the app to when they close their browser. If you are having trouble testing, try to use Chrome's Incognito	mode browser. In Incognito Mode, you start off with a blank session each time and can control your session a lot easier through the browser without having to close the browser each time. 
+
+		</section>
+		<h4>Submission</h4>
+		<section>
+			You will need to take a screen shot of every screen you develop. You should have 6 game screens, a 404 page, and a history page in your app. Push your screen shots and your <em>Bored Game Nerd</em> app to github.
+		</section>
+        
+        
+    </div>
+  </div>
+  
+</main>

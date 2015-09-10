@@ -15,6 +15,12 @@ header('Access-Control-Allow-Origin: *');
 	"date" : "9/10",
 	"id" : 2
 }, {
+	"title" : "Mirror Mirror on the Wall",
+	"xp" : "50 xp",
+	"overview" : "Write a servlet dispatcher using annotations &amp; reflections by buiding a knock off board game geek website.",
+	"date" : "9/24",
+	"id" : 3
+}, {
 	"title" : "Main Quest",
 	"xp" : "500 xp",
 	"overview" : "Build 'The Voting Game' as an online application that you and your friends can play.",

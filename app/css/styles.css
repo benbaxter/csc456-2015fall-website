@@ -39,7 +39,7 @@ ol.requirements li ol {
 }
 
 .ninja {
-  display : none;
+  visibility : hidden;
 }
 
 .clumsy-ninja {

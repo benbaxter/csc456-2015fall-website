@@ -31,7 +31,7 @@
           <pre><code class="java">&lt;%= ... %&gt;</code></pre>
           into:
           <pre><code class="java">${ ... }</code></pre>
-          This is supposed to be a really small and easy adventure. There should be a minimum of 3 replacements. Take a screen shot of the app still working after the changes. Save the screen shots in the <em>adventure2</em> directory and push to your repository on Github.
+          This is supposed to be a really small and easy adventure. There should be a minimum of 2 replacements. Take a screen shot of the app still working after the changes. Save the screen shots in the <em>adventure2</em> directory and push to your repository on Github.
         </section>
 
         <h4 id="jstl">Rewrite with jstl</h4>
@@ -42,7 +42,7 @@
           <pre>/adventure2/guessing-jstl/</pre>
           Copy the guessing game code and folders from the guessing-expressions app. Run this new app in tomcat to make sure everything still runs correctly. 
           <br><br>
-          Go through the app and replace all scriptlet tags with the correct core jstl tags. For example the if statement in the scriptlet tag will become an &lt;c:if /&gt; tag and the if-else statement will become a &lt;c:choose /&gt; tag. There should be a minimum of 2 replacements. In addition change at least one of the expressions (${...}) to use a core jstl tag. 
+          Go through the app and replace all scriptlet tags with the correct core jstl tags. For example the if statement in the scriptlet tag will become an &lt;c:if /&gt; tag and the if-else statement will become a &lt;c:choose /&gt; tag. There should be a minimum of 2 replacements. In addition change at least one of the expressions (${...}) to use a core jstl tag. (Hint: use &lt;c:out /&gt;)
           <br><br>
           When you are done, there should be <strong>no</strong> scriptlet tags in used in the jsp. Make sure the game still works correctly and take a screen shot of the app. Saved the screen shot in the <em>adventure2</em> directory as well. 
         </section>
@@ -110,6 +110,20 @@ return null;
 
 war {
 baseName = 'gradle-intro'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 }</code></pre>
           From the command line, change directory to <em>/gradle-intro/</em> and run the following command.
           <pre><code>$&gt; gradle build</code></pre>
