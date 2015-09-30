@@ -113,7 +113,46 @@
 
 		<h4>Create a user</h4>
 		<section>
+			When you create a user, you will need a screen for them to enter in their data. Image a screen with a few
+			inputs similar to this:
+			<div class="mdl-card mdl-shadow--2dp">
+				<div class="mdl-card__supporting-text">
+					<form action="#" onsubmit="return false;">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" id="firstname" />
+							<label class="mdl-textfield__label" for="firstname">First Name</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" id="lastname" />
+							<label class="mdl-textfield__label" for="lastname">Last Name</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" id="username" />
+							<label class="mdl-textfield__label" for="username">Username</label>
+						</div>
+						<div>
+							<button class="mdl-button mdl-js-button mdl-button--primary">
+								Start Chatting
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<br>
+			This was just an example of the inputs you will need, please be more creative with integrating your form
+			into your web application.
 
+			<br><br>
+			Once you have a form for input, you will need to create a servlet to process the user's information.
+			This is where we get messy! The servlet will need to talk to the database which will require a bit more
+			setup. Basically, we are going to need more than just a servlet to get started. Let's start with creating
+			a <strong>ServletContextListener</strong>
+			<br><br>
+			If you want to use a <a href="app/views/adventure4/MysqlContextListener.java">listener</a>, you may otherwise you can build
+			your own. They are pretty eay to build. The listener provided solves the problem using the servlet 2.5 pattern.
+			If you want to be more modern, let's use the new servlet 3.0 annotation: <em>@WebListener</em>!
+
+			<br><br>
 			More requirements coming soon!
 		</section>
 
