@@ -1,0 +1,139 @@
+<div class="demo-ribbon"></div>
+<main class="demo-main mdl-layout__content">
+  <div class="demo-container mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+      <div class="demo-crumbs mdl-color-text--grey-500">
+        Adventure &gt; 4 &gt; Chatty Cathy
+      </div>
+
+      <h3>Chatty Cathy</h3>
+        In this adventure, we will be using databases and web sockets to build a full fledge chat client.
+
+        <h4>Building a Chat Room</h4>
+        <div>
+        	If you are not familiar with what a chat room is, check out Google Hangouts, Facebook Messenger, or Slack to
+			start to get familiar with what a chat app looks, feels, and functions.
+			<br><br>
+
+			We are going to build a chat client that is pretty complete. The chat client will need the following features:
+			<ul class="toc">
+				<a href="#adventure4">List all users</a>
+				<a href="#adventure4">Select a user start a chat</a>
+				<a href="#adventure4">Enable chatting between you and someone else</a>
+				<a href="#adventure4">Save the chat between the users</a>
+				<a href="#adventure4">When a user comes back into the app, indicate the new messages that they missed</a>
+			</ul>
+			For extra credit, add the following:
+			<ul class="toc">
+				<a href="#adventure4">Indicate which users are online</a>
+			</ul>
+        </div>
+		<h4>Setup the Database</h4>
+		<section>
+			You will need to download mysql to get started. Either go to <a href="http://dev.mysql.com/downloads/mysql/" target="_blank">mysql's site</a>
+			or use some other website. I do not care how you install it, just so long as you understand how to use a database
+			with a java web application.
+
+			<br><br>
+			To test that mysql is installed properly, run the following command:
+			<pre>c:\&gt; mysqld --console</pre>
+			If it works, you should see something similar for the output:
+			<img src="app/views/adventure4/mysqld_output.png" />
+			<br><br>
+			<strong>mysqld</strong> is the running <em>daemon</em> of the MySQL database server.
+			<br><br>
+			You can leave that terminal window up and running in the background while you work.
+			Think of it like how we have a terminal dedicated for tomcat running in the background while we work.
+
+		</section>
+
+		<h4>Create a database</h4>
+		<section>
+
+			Open a console window and type in the following command
+			(The command line option <strong>-u root</strong> indicates the root user of the database system.
+			<strong>-p</strong> asks for the password. When it prompts you to enter the password, type
+			<em>Enter</em> without typing any other characters. This is because by default there is no
+			password for user <em>root</em>. Keep in mind, that the user root has nothing to do with the
+			operating system's user <em>root</em>. This is the user for the MySQL database).
+			<pre>c:\&gt; mysql -u root -p</pre>
+			<img src="app/views/adventure4/mysql_u_p.png" />
+			<br><br>
+			Once you successfully login to the database system, type the following command to see what databases are in the system.
+			<pre>mysql&gt; show databases;</pre>
+			<img src="app/views/adventure4/show_databased.png" />
+			<br><br>
+			Looking at the databases, it is best practice to create one for our application. A database is just a collection
+			of tables, so it is normal to have multiple databases with app specific tables at a company. Some databases
+			(like oracle and db2) also support a concept of <em>views</em> which allow easier inside into a set of databases.
+			We do not have to worry about <em>views</em> for this adventure.
+			<br><br>
+			So let's create a database for out chat client!
+			<pre>mysql&gt; create database chat;</pre>
+			Side note, do not forget the semi-colon otherwise you will have some unintuitive interactions with mysql.
+			<br><br>
+			Feel free to view the databases again to verify that a new database has been created.
+			<br><br>
+			Now that we have created a database, we need to specify that we want to do some work with it. Think of a database
+			as a folder and tables as files. If we were in a file explorer, we need to drill into a folder to view the files.
+			The analogy applies to databases in the since that we need to drill into the database explicitly in order to use it.
+			To metaphorically drill into a database, run the following command:
+			<pre>mysql&gt; use chat;</pre>
+			To view the tables of a database, use the following command:
+			<pre>mysql&gt; show tables;</pre>
+			Hopefully you see nothing since there are no tables added to the database yet. In the next section we will add
+			the tables.
+
+		</section>
+
+		<h4>Create tables</h4>
+		<section>
+
+			What tables do you think we will need for this application? Maybe a table to store the users? A table to store the chat?
+			a join table to store the conversation? There are many different ways to setup the relationships for this adventure.
+			<br><br>
+			We will walk through how to create a table for the user's themselves for an example but the rest is up to you. You
+			do not have to over engineer your schema, but in the real world, there are many debates over normalization of a schema.
+			If you want to play around and try normalization of your tables, you have that freedom.
+			<br><br>
+			To create the user table, we need to think about what it means to be a user. To increase the complexity and not make the table
+			too trivial, let's let our users have a <em>first name</em>, <em>last name</em>, and <em>chat handle</em>. (A chat handle is essentially
+			the same as a username). Let's start by creating this table with these columns by running the following command:
+			<pre>mysql&gt; create table users (firstname varchar(20), lastname varchar(20), username varchar(20));</pre>
+			To view the table, run the following command:
+			<pre>mysql&gt; desc users;</pre>
+
+			Congrats! You have successfully installed mySql, created a database, and a table in the database! We will work on writing a part of the application together next.
+
+			<br><br>
+			If you need any help with the syntax of sql, <a href="http://www.w3schools.com/sql/">w3c schools</a> is an excellent reference.
+
+		</section>
+
+		<h4>Create a user</h4>
+		<section>
+
+			More requirements coming soon!
+		</section>
+
+		<h4>Put a Sock in it</h4>
+		<section>
+
+			To see an example of how web sockets work, check out the sample app on
+			<a href="https://github.com/benbaxter/web-socket-chat">github</a>.
+
+			<br><br>
+			More requirements coming soon!
+		</section>
+
+		<h4>Submission</h4>
+		<section>
+			You will need to take a screen shot of every screen you develop. Push your screen shots and your app to github.
+		</section>
+        
+        
+    </div>
+  </div>
+  
+</main>

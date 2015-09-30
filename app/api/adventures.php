@@ -21,6 +21,12 @@ header('Access-Control-Allow-Origin: *');
 	"date" : "9/24",
 	"id" : 3
 }, {
+	"title" : "Chatty Cathy",
+	"xp" : "150 xp",
+	"overview" : "Write a chat client similar to those in WOW and Online Poker; using web sockets and databases.",
+	"date" : "10/23",
+	"id" : 4
+}, {
 	"title" : "Main Quest",
 	"xp" : "500 xp",
 	"overview" : "Build 'The Voting Game' as an online application that you and your friends can play.",
