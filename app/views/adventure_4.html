@@ -203,14 +203,43 @@
 
 		</section>
 
-		<h4>Put a Sock in it</h4>
+		<h4>Put a sock in it</h4>
 		<section>
 
+			Once people can &quot;login&quot; to your app, they will want to chat with someone else. You will need to
+			query the database to display all of the user's registered with your app so that the current user can
+			select one to start a chat with.
+
+			<br><br>
+
+			Once a user initiates a chat, a web socket should be opened for that user to the server.
+
+			<br><br>
+
+			When the other user comes back to the app, they should be able to see all of the chats that they are in. Think
+			of it like facebook's messenger app, where you see a list of people you have talked too. They should then be
+			able to select a chat message (or person) to resume the chat. Upon resuming, a socket should be opened
+			with the server.
+
+			<br><br>
+
+			Once both users are in the chat at the same time, as they chat, the messages should be showing up
+			on the screen in real time without having to refresh the page. WebSockets will give this to you for free.
+			(aka if you do not implement web sockets for your chat client, you will not be able to earn full credit)
 			To see an example of how web sockets work, check out the sample app on
 			<a href="https://github.com/benbaxter/web-socket-chat">github</a>.
 
 			<br><br>
-			More requirements coming soon!
+
+			As messages are sent, whether the other person is there to receive them or not, they should be saved in the database
+			so that each person can resume the conversation and see what was typed while they were not in the app.
+
+			<br><br>
+
+			Because the conversation is stored the database, you will also be able to show the user which are 'new messages'
+			that they missed while they were away. Hint: keep track of a 'read' flag for each user for each message in
+			the database. Another way to think of this problem is to want to show the user where they left off last.
+
 		</section>
 
 		<h4>Submission</h4>
