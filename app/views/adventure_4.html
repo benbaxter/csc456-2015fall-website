@@ -8,9 +8,14 @@
       </div>
 
       <h3>Chatty Cathy</h3>
-        In this adventure, we will be using databases and web sockets to build a full fledge chat client.
+        In this adventure, we will be using databases and web sockets to build a full fledged chat client.
 
-        <h4>Building a Chat Room</h4>
+		<br><br>
+		We will be using servlet 3.0 technology for this adventure and we will not need the <em>web.xml</em> file.
+		Make sure your application does not need a <em>web.xml</em> file. If you have it in your project, whether you
+		use it or not, you will lose half credit.
+
+		<h4>Building a Chat Room</h4>
         <div>
         	If you are not familiar with what a chat room is, check out Google Hangouts, Facebook Messenger, or Slack to
 			start to get familiar with what a chat app looks, feels, and functions.
@@ -27,6 +32,7 @@
 			For extra credit, add the following:
 			<ul class="toc">
 				<a href="#adventure4">Indicate which users are online</a>
+				<a href="#adventure4">Support login with Facebook</a>
 			</ul>
         </div>
 		<h4>Setup the Database</h4>
@@ -148,12 +154,53 @@
 			setup. Basically, we are going to need more than just a servlet to get started. Let's start with creating
 			a <strong>ServletContextListener</strong>
 			<br><br>
-			If you want to use a <a href="app/views/adventure4/MysqlContextListener.java">listener</a>, you may otherwise you can build
-			your own. They are pretty eay to build. The listener provided solves the problem using the servlet 2.5 pattern.
-			If you want to be more modern, let's use the new servlet 3.0 annotation: <em>@WebListener</em>!
+			If you want to use this <a href="app/views/adventure4/MysqlContextListener.java">listener</a>, you can but you
+			will need to update it to work for servlet 3.0. The main thing it is missing is the <em>@WebListener</em> annotation.
+			Feel free to build your own to get the most detailed experience from the adventure.
 
 			<br><br>
-			More requirements coming soon!
+
+			All this listener does it put the connection to the database into the servlet context.
+			<pre><code>ServletContext sc = event.getServletContext();
+				sc.setAttribute("dbconnection", conn);</code></pre>
+
+			The servlet context holds a map of objects, essentially. The key to get the connection is &quot;dbconnection&quot; in this
+			servlet context. You can call your key whatever you want.
+
+			<br><br>
+
+			Let's jump back to our servlet now! Since we have one connection setup for our app, let's grab the connection and
+			insert the user once the form is submitted.
+			<pre><code>@Override
+				protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+				throws ServletException, IOException {
+				Connection conn = (Connection) getServletContext().getAttribute("dbconnection");
+				//moar code!
+				}</code></pre>
+			The <strong>getServletContext()</strong> is provided for you because you have extended <em>HttpServlet</em>
+
+			<br><br>
+			To insert into the database, you need to create a statement. A statement is basically some sql that you want to
+			execute. When you are done, do not forget to close your statement, otherwise you will start having some
+			nasty memory leaks.
+
+			<pre><code>Statement stmt = conn.createStatement();
+
+				String query = "insert into users values ('" + firstName + "' , '" + lastName + "' , '" + username + "')";
+				System.out.println(query);
+				stmt.executeUpdate(query);
+
+				stmt.close();
+				stmt = null;
+			</code></pre>
+			Hint: The biggest problem with databases and java is building valid sql with string concatenation. If you are
+			having troubles, try to run your query in the mysql console and then try to port it into java.
+
+			<br><br>
+
+			Once you have your connection you can do all of the database queries, inserts, deletes, and updates that you
+			need to do!
+
 		</section>
 
 		<h4>Put a Sock in it</h4>
@@ -169,6 +216,11 @@
 		<h4>Submission</h4>
 		<section>
 			You will need to take a screen shot of every screen you develop. Push your screen shots and your app to github.
+
+			<br><br>
+
+			Make sure your application does not need a <em>web.xml</em> file. If you have it in your project, whether you
+			use it or not, you will lose half credit.
 		</section>
         
         

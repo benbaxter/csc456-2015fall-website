@@ -19,9 +19,9 @@ header('Access-Control-Allow-Origin: *');
 	"slides" : ["../slides/Chapter 4 Request and Response.ppt", "../slides/Chapter 4--Request redirect and dispatch.ppt"]
 }, {
 	"date" : "9/10",
-	"readings" : ["Chapter 5 (H)", "Chapter 8 (H)"],
+	"readings" : ["Chapter 8 (H)"],
 	"topics" : ["Being a Web App", "Session Management"],
-	"slides" : ["../slides/Chapter 5 Being a Web App.ppt", "../slides/Chapter 6 Session Management.ppt"]
+	"slides" : ["../slides/Chapter 6 Session Management.ppt"]
 }, {
 	"date" : "9/17",
 	"topics" : ["Mini Boss 1"],
@@ -32,14 +32,14 @@ header('Access-Control-Allow-Origin: *');
 	"no-class" : true
 }, {
 	"date" : "10/1",
-	"reading" : ["Chapter 8 (H)"],
-	"topics" : ["Session Management"],
-	"slides" : ["../slides/Chapter 6 Session Management.ppt"]
-}, {
-	"date" : "10/8",
-	"readings" : ["Chapter 7 (H)"],
+	"reading" : ["Chapter 7 (H)"],
 	"topics" : ["Java and Databases"],
 	"slides" : ["../slides/JAVA Database Access.ppt"]
+}, {
+	"date" : "10/8",
+	"readings" : ["Chapter 5"],
+	"topics" : ["Being a Webapp"],
+	"slides" : ["../slides/Chapter 5 Being a Web App.ppt"]
 }, {
 	"date" : "10/15",
 	"readings" : ["Chapter 1 (G)", "Chapter 2 (G)"],
