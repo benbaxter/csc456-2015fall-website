@@ -38,7 +38,7 @@ header('Access-Control-Allow-Origin: *');
 }, {
 	"date" : "10/8",
 	"readings" : ["Chapter 5"],
-	"topics" : ["Being a Webapp"],
+	"topics" : ["Tic Tac Toe", "Database example", "Sockets example", "JavaScript", "Being a Webapp"],
 	"slides" : ["../slides/Chapter 5 Being a Web App.ppt"]
 }, {
 	"date" : "10/15",
