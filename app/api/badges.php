@@ -18,28 +18,28 @@ header('Access-Control-Allow-Origin: *');
 	"id" : 2
 }, {
 	"title" : "Sleeping Bear",
-	"xp" : "30 xp",
+	"xp" : "45 xp",
 	"badge" : "snooze",
 	"unicode" : "\uF32C",
 	"description" : "Redo the database assignment but use a library called hibernate which is an ORM (object relational model) abstraction.",
 	"id" : 3
 }, {
 	"title" : "Template of doom",
-	"xp" : "30 xp",
+	"xp" : "45 xp",
 	"badge" : "view_quilt",
 	"unicode" : "\uF322",
 	"description" : "Redo the database assignment but use a library called spring-jdbc which is an abstraction over SQL.",
 	"id" : 4
 }, {
 	"title" : "Jynx",
-	"xp" : "30 xp",
+	"xp" : "40 xp",
 	"badge" : "people",
 	"unicode" : "\uF209",
 	"description" : "Redo the database assignment but use a library called jinq.",
 	"id" : 5
 }, {
 	"title" : "Mongo",
-	"xp" : "30 xp",
+	"xp" : "50 xp",
 	"badge" : "lens",
 	"unicode" : "\uF26D",
 	"description" : "Redo the database assignment but instead of using mySQL, use a noSQL solution called mongoDB.",
@@ -87,10 +87,17 @@ header('Access-Control-Allow-Origin: *');
 	"description" : "Build a simple RESTful api that has a few GET and POST methods. You will need at least 4 different rest endpoints to earn credit for this. The endpoints can do anything you want, but at least 2 of them need to accept a payload of data to process (similar to form submission). Look up Swagger (as it pertains to web development not as it pertains towards arrogance) and swagger-ui and have it document your rest api. You should be able to play with your rest api with swagger and test out your code.",
 	"id" : 12
 }, {
+	"title" : "Tic Tac Toe",
+	"xp" : "50 xp",
+	"badge" : "grid_on",
+	"unicode" : "\uF214",
+	"description" : "Finish the implementation for tic-tac-toe as discussed in class. Fork this <a href='https://github.com/benbaxter/tic-tac-toe-web'>repo</a> for a starting point.",
+    "id" : 13
+}, {
 	"title" : "Super Effective!",
 	"xp" : "200 xp",
 	"badge" : "chat",
 	"unicode" : "\uF262",
 	"description" : "Read the book Effective Java by Joshua Bloch and create a small presentation (no more than a 20 minutes) and give it to the class. Please coordinate with me on when you would like to give your presentation so I can adjust the schedule accordingly. This badge will only be awarded to the first person who completes it.",
-	"id" : 13
+	"id" : 14
 }]
