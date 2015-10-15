@@ -29,7 +29,7 @@ header('Access-Control-Allow-Origin: *');
 }, {
 	"title" : "WoW",
 	"xp" : "150 xp",
-	"overview" : "Create a RPG game of the style of World of Warcraft.",
+	"overview" : "Create a RPG game in the style of World of Warcraft.",
 	"date" : "11/05",
 	"id" : 5
 }, {
