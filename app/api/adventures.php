@@ -24,8 +24,14 @@ header('Access-Control-Allow-Origin: *');
 	"title" : "Chatty Cathy",
 	"xp" : "150 xp",
 	"overview" : "Write a chat client similar to those in WOW and Online Poker; using web sockets and databases.",
-	"date" : "10/23",
+	"date" : "10/26",
 	"id" : 4
+}, {
+	"title" : "WoW",
+	"xp" : "150 xp",
+	"overview" : "Create a RPG game of the style of World of Warcraft.",
+	"date" : "11/05",
+	"id" : 5
 }, {
 	"title" : "Main Quest",
 	"xp" : "500 xp",

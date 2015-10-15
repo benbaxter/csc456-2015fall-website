@@ -38,17 +38,17 @@ header('Access-Control-Allow-Origin: *');
 }, {
 	"date" : "10/8",
 	"readings" : ["Chapter 5"],
-	"topics" : ["Tic Tac Toe", "Database example", "Sockets example", "JavaScript", "Being a Webapp"],
-	"slides" : ["../slides/Chapter 5 Being a Web App.ppt"]
+	"topics" : ["Tic Tac Toe", "Database example"],
+	"slides" : []
 }, {
 	"date" : "10/15",
-	"readings" : ["Chapter 1 (G)", "Chapter 2 (G)"],
-	"topics" : ["Introducing to Project Automation", "Next-Generation Builds with Gradle"]
+	"readings" : ["Tic Tac Toe pt 2", "Database example", "Sockets example", "JavaScript"],
+	"topics" : []
 }, {
 	"date" : "10/22",
 	"readings" : ["Chapter 11 (H)", "Chapter 3 (G)"],
 	"topics" : ["Deploying Your Web App", "Building a Gradle Project by Example"],
-	"slides" : ["../slides/Chapter 11 Deploying your web app.ppt"]
+	"slides" : ["../slides/Chapter 5 Being a Web App.ppt", "../slides/Chapter 11 Deploying your web app.ppt"]
 }, {
 	"date" : "10/29",
 	"topics" : ["Mini Boss 2"],
@@ -56,8 +56,8 @@ header('Access-Control-Allow-Origin: *');
 }, {
 	"date" : "11/5",
 	"readings" : ["Chapter 12 (H)"],
-	"topics" : ["Web App Security"],
-	"slides" : ["../slides/Chapter 12 Web app security.ppt"]
+	"topics" : ["Chapter 1 (G)", "Chapter 2 (G)", "Web App Security"],
+	"slides" : ["Introducing to Project Automation", "Next-Generation Builds with Gradle", "../slides/Chapter 12 Web app security.ppt"]
 }, {
 	"date" : "11/12",
 	"topics" : ["Web Topics"],
