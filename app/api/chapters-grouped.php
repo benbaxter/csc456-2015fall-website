@@ -42,13 +42,12 @@ header('Access-Control-Allow-Origin: *');
 	"slides" : []
 }, {
 	"date" : "10/15",
-	"readings" : ["Tic Tac Toe pt 2", "Database example", "Sockets example", "JavaScript"],
+	"readings" : ["Tic Tac Toe pt 2", "Database example", "Sockets example"],
 	"topics" : []
 }, {
 	"date" : "10/22",
-	"readings" : ["Chapter 11 (H)", "Chapter 3 (G)"],
-	"topics" : ["Deploying Your Web App", "Building a Gradle Project by Example"],
-	"slides" : ["../slides/Chapter 5 Being a Web App.ppt", "../slides/Chapter 11 Deploying your web app.ppt"]
+	"topics" : ["JavaScript", "Review"],
+	"slides" : []
 }, {
 	"date" : "10/29",
 	"topics" : ["Mini Boss 2"],
@@ -60,8 +59,9 @@ header('Access-Control-Allow-Origin: *');
 	"slides" : ["Introducing to Project Automation", "Next-Generation Builds with Gradle", "../slides/Chapter 12 Web app security.ppt"]
 }, {
 	"date" : "11/12",
-	"topics" : ["Web Topics"],
-	"slides" : ["../slides/Other technologies and products related to J2EE.ppt"]
+	"readings" : ["Chapter 11 (H)", "Chapter 3 (G)"],
+	"topics" : ["Deploying Your Web App", "Building a Gradle Project by Example", "Web Topics"],
+	"slides" : ["../slides/Chapter 5 Being a Web App.ppt", "../slides/Chapter 11 Deploying your web app.ppt", "../slides/Other technologies and products related to J2EE.ppt"]
 }, {
 	"date" : "11/19",
 	"topics" : ["Project Demo"],
