@@ -1,6 +1,9 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
+//	"Chapter 1 (G)", "Chapter 2 (G)", "Chapter 11 (H)", "Chapter 3 (G)"
+// "Deploying Your Web App", "Building a Gradle Project by Example", "Web Topics"
+// "slides" : ["Introducing to Project Automation", "Next-Generation Builds with Gradle", "../slides/Chapter 5 Being a Web App.ppt", "../slides/Chapter 11 Deploying your web app.ppt", "../slides/Other technologies and products related to J2EE.ppt"]
 ?>
 [ {
 	"date" : "8/20",
@@ -38,16 +41,13 @@ header('Access-Control-Allow-Origin: *');
 }, {
 	"date" : "10/8",
 	"readings" : ["Chapter 5"],
-	"topics" : ["Tic Tac Toe", "Database example"],
-	"slides" : []
+	"topics" : ["Tic Tac Toe", "Database example"]
 }, {
 	"date" : "10/15",
-	"readings" : ["Tic Tac Toe pt 2", "Database example", "Sockets example"],
-	"topics" : []
+	"readings" : ["Tic Tac Toe pt 2", "Database example", "Sockets example"]
 }, {
 	"date" : "10/22",
-	"topics" : ["JavaScript", "Review"],
-	"slides" : []
+	"topics" : ["JavaScript", "Review"]
 }, {
 	"date" : "10/29",
 	"topics" : ["Mini Boss 2"],
@@ -55,13 +55,11 @@ header('Access-Control-Allow-Origin: *');
 }, {
 	"date" : "11/5",
 	"readings" : ["Chapter 12 (H)"],
-	"topics" : ["Chapter 1 (G)", "Chapter 2 (G)", "Web App Security"],
-	"slides" : ["Introducing to Project Automation", "Next-Generation Builds with Gradle", "../slides/Chapter 12 Web app security.ppt"]
+	"topics" : ["Exam Review", "Emailing"]
 }, {
 	"date" : "11/12",
-	"readings" : ["Chapter 11 (H)", "Chapter 3 (G)"],
-	"topics" : ["Deploying Your Web App", "Building a Gradle Project by Example", "Web Topics"],
-	"slides" : ["../slides/Chapter 5 Being a Web App.ppt", "../slides/Chapter 11 Deploying your web app.ppt", "../slides/Other technologies and products related to J2EE.ppt"]
+	"readings" : ["Web App Security", "TBD"],
+	"slides" : ["../slides/Chapter 12 Web app security.ppt"]
 }, {
 	"date" : "11/19",
 	"topics" : ["Project Demo"],
